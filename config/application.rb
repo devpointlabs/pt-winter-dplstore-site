@@ -17,5 +17,6 @@ module DplStoreSite19
     # -- all .rb files in that directory are automatically loaded after loading
     # the framework and any gems in your application.
     config.api_only = true
+    config.generators.javascript_engine = :js
   end
 end
