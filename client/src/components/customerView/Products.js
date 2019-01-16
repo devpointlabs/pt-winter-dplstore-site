@@ -14,7 +14,6 @@ class Products extends React.Component {
       })
   }
 
-
   renderProducts = () => {
     return this.state.products.map( p => (
       <Link to={`/products/${p.id}`}>
@@ -34,7 +33,6 @@ class Products extends React.Component {
       </div>
     )
   }
-
 }
 
 export default Products;
