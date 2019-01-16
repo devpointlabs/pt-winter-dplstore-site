@@ -17,6 +17,4 @@ const App = () => (
   </Fragment>
 )
 
-
-
-export default App
+export default App;
