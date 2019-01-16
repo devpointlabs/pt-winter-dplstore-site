@@ -6,11 +6,13 @@ import NoMatch from './components/NoMatch';
 import Product from './components/customerView/Product';
 import CheckoutForm from './components/customerView/CheckoutForm';
 import Products from './components/customerView/Products'
+import Home from './components/Home'
 
 const App = () => (
   <Fragment>
     <Container>
       <Switch>
+        <Route exact path='/' component={Home} />
         <Route exact path='/admin/products' component={AdminProducts} />
         <Route exact path='/products/:id' component={Product} />
         <Route exact path='/checkout' component={CheckoutForm} />

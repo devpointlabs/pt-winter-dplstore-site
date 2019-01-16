@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Card, Header, Divider} from 'semantic-ui-react'
 import ProductPreview from './ProductPreview'
+import FeaturedProducts from './FeaturedProducts'
 
 class Products extends React.Component {
   state = { products: [], }
@@ -25,7 +26,8 @@ class Products extends React.Component {
   render() {
     return (
       <div>
-        <Header as='h1'>Products</Header>
+        <FeaturedProducts />
+        <Header textAlign='center'>Featured Products</Header>
           <Divider />
             <Card.Group itemsPerRow={3}>
               { this.renderProducts()}
