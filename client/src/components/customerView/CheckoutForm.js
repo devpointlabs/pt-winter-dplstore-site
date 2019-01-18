@@ -22,9 +22,7 @@ class CheckoutForm extends React.Component {
     const customer = { ...this.state }
     this.props.submit(customer)
     this.setState({ ...this.defaultValues})
-    
   }
-
 
   render() {
     const { firstName, middleName, lastName, address, city, zipcode, 
@@ -38,163 +36,159 @@ class CheckoutForm extends React.Component {
     return (
 
       <Container>
-      <Segment>
-      <Step.Group ordered widths="equal">
-      <Step active>
-        <Icon name='credit card' />
-          <Step.Content>
-            <Step.Title>Payment</Step.Title>
-            <Step.Description>Enter billing information</Step.Description>
-          </Step.Content>
-        </Step>
-
+        <Segment>
+        <Step.Group ordered widths="equal">
         <Step active>
-          <Step.Content>
-            <Step.Title>Order</Step.Title>
-            <Step.Description>Enter your shipping information</Step.Description>
-          </Step.Content>
-        </Step>
-
-        <Step completed>
+          <Icon name='credit card' />
             <Step.Content>
-            <Step.Title>Confirm Order</Step.Title>
-          </Step.Content>
-        </Step>
-        </Step.Group>
-      </Segment>
+              <Step.Title>Payment</Step.Title>
+              <Step.Description>Enter billing information</Step.Description>
+            </Step.Content>
+          </Step>
 
-      <Segment>
-      <Form onSubmit={this.handleSubmit}>
-    
-        <Form.Group>
-     
-          <Form.Input 
-            fluid
-            width={4}
-            name="firstName"
-            placeholder="First Name"
-            label="First Name"
-            value={firstName}
-            required
-            onChange={this.handleChange}
-          />
+          <Step active>
+            <Step.Content>
+              <Step.Title>Order</Step.Title>
+              <Step.Description>Enter your shipping information</Step.Description>
+            </Step.Content>
+          </Step>
 
-          <Form.Input 
-            fluid
-            name="middleName"
-            width={3}
-            placeholder="Middle Name (optional)"
-            label="Middle Name"
-            value={middleName}
-            onChange={this.handleChange}
-          />
+          <Step completed>
+              <Step.Content>
+              <Step.Title>Confirm Order</Step.Title>
+            </Step.Content>
+          </Step>
+          </Step.Group>
+        </Segment>
 
-          <Form.Input 
-            fluid
-            name="lastName"
-            width={4}
-            placeholder="Last Name"
-            label="Last Name"
-            value={lastName}
-            required
-            onChange={this.handleChange}
-          />
-       
-        </Form.Group>
+        <Segment>
+          <Form onSubmit={this.handleSubmit}>
 
-        <Form.Group>
-          <Form.Input 
-            fluid
-            name="address"
-            width={6}
-            placeholder="Address"
-            label="Address"
-            value={address}
-            required
-            onChange={this.handleChange}
-          />
-          <Form.Input 
-            fluid
-            name="city"
-            width={3}
-            placeholder="City"
-            label="City"
-            value={city}
-            required
-            onChange={this.handleChange}
-            
-          />
-          <Form.Input 
-            fluid
-            name="zipcode"
-            width={2}
-            placeholder="Zipcode"
-            label="Zipcode"
-            value={zipcode}
-            required
-            onChange={this.handleChange}
-            type='number'
-            min='0'
-          />
-        </Form.Group>
+            <Form.Group>
 
-        <Form.Group>
-        <Form.Input 
-            fluid
-            width={2}
-            name="state"
-            width={2}
-            placeholder="State"
-            label="State"
-            value={state}
-            required
-            onChange={this.handleChange}     
-          />  
-        <Form.Input 
-            fluid
-            width={3}
-            name="Country"
-            width={2}
-            placeholder="Country"
-            label="Country"
-            value={country}
-            required
-            onChange={this.handleChange}     
-          /> 
-         <Form.Input 
-            fluid
-            name="phone"
-            width={3}
-            placeholder="(xxx)-xxx-xxxx"
-            label="Phone"
-            value={phone}
-            required
-            onChange={this.handleChange}     
-          /> 
-        </Form.Group>
+              <Form.Input 
+                fluid
+                width={4}
+                name="firstName"
+                placeholder="First Name"
+                label="First Name"
+                value={firstName}
+                required
+                onChange={this.handleChange}
+              />
 
-        <Form.Group>
-          <Form.Select 
-            fluid label='Size' 
-            options={options} 
-            placeholder='Size'
-            width={2} 
-          />
-        </Form.Group>
-   
+              <Form.Input 
+                fluid
+                name="middleName"
+                width={3}
+                placeholder="Middle Name (optional)"
+                label="Middle Name"
+                value={middleName}
+                onChange={this.handleChange}
+              />
 
-        <Form.Button color='purple' size ='mini'>
-          Submit
-        </Form.Button>
+              <Form.Input 
+                fluid
+                name="lastName"
+                width={4}
+                placeholder="Last Name"
+                label="Last Name"
+                value={lastName}
+                required
+                onChange={this.handleChange}
+              />
 
-      </Form>
-      </Segment>
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Input 
+                fluid
+                name="address"
+                width={6}
+                placeholder="Address"
+                label="Address"
+                value={address}
+                required
+                onChange={this.handleChange}
+              />
+              <Form.Input 
+                fluid
+                name="city"
+                width={3}
+                placeholder="City"
+                label="City"
+                value={city}
+                required
+                onChange={this.handleChange}
+
+              />
+              <Form.Input 
+                fluid
+                name="zipcode"
+                width={2}
+                placeholder="Zipcode"
+                label="Zipcode"
+                value={zipcode}
+                required
+                onChange={this.handleChange}
+                type='number'
+                min='0'
+              />
+            </Form.Group>
+
+            <Form.Group>
+            <Form.Input 
+                fluid
+                width={2}
+                name="state"
+                width={2}
+                placeholder="State"
+                label="State"
+                value={state}
+                required
+                onChange={this.handleChange}     
+              />  
+            <Form.Input 
+                fluid
+                width={3}
+                name="Country"
+                width={2}
+                placeholder="Country"
+                label="Country"
+                value={country}
+                required
+                onChange={this.handleChange}     
+              /> 
+             <Form.Input 
+                fluid
+                name="phone"
+                width={3}
+                placeholder="(xxx)-xxx-xxxx"
+                label="Phone"
+                value={phone}
+                required
+                onChange={this.handleChange}     
+              /> 
+            </Form.Group>
+
+            <Form.Group>
+              <Form.Select 
+                fluid label='Size' 
+                options={options} 
+                placeholder='Size'
+                width={2} 
+              />
+            </Form.Group>
+
+            <Form.Button color='purple' size ='mini'>
+              Submit
+            </Form.Button>
+
+          </Form>
+        </Segment>
       </Container>
     )
   }
-
-
-
 }
 
 export default CheckoutForm;
