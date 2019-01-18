@@ -14,7 +14,7 @@ class Products extends React.Component {
 
   renderProducts = () => {
     return this.state.products.map( p => (
-      <ProductPreview key={p.id} {...p} remove={this.removeProduct} />
+      <ProductPreview key={p.id} {...p} remove={this.removeProduct} edit={this.editProduct} />
     ))
   }
 
@@ -26,14 +26,28 @@ class Products extends React.Component {
     axios.post('/api/products', {product})
       .then(res => {
         this.setState({ product: [res.data, ...this.state.products] })
+        window.location.reload();
+      })
+  }
+
+  editProduct = (id) => {
+    const product = this.state.products.find( p => p.id === id )
+      
+    return <ProductForm key={product.id} {...product} submit={this.submitEdit}/>
+  }
+  
+  submitEdit =(product) => {
+    axios.put(`/api/products/${product.id}`, {product})
+      .then(res => {
+        this.setState({ product: res.data, })
+        window.location.reload();
       })
   }
 
   removeProduct  = (id) => {
     const remove = window.confirm("Are you sure you want to delete this Product?");
-    // const {id} = this.props.match.params;
     if (remove)
-      axios.delete(`/api/products/${id}/`)
+      axios.delete(`/api/products/${id}`)
         .then( res => {
           const products = this.state.products.filter( p => {
             if (p.id !== id)
@@ -44,26 +58,23 @@ class Products extends React.Component {
         })
   }
 
-
-
   render() {
     return (
       <div>
         <Header>Products</Header>
-        
         <Modal trigger={<Button>Add Product</Button>}>
+          <Modal.Header>Add New Product</Modal.Header>
           <Modal.Content>
-            { this.renderForm()}  
+            { this.renderForm() }  
           </Modal.Content> 
         </Modal>
         <Divider />
         <Card.Group itemsPerRow={3}>
-          { this.renderProducts()}
+          { this.renderProducts() }
         </Card.Group>
       </div>
     )
   }
-
 }
 
 export default Products;

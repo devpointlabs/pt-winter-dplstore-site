@@ -20,8 +20,7 @@ class ProductForm extends React.Component {
     e.preventDefault();
     const product = { ...this.state }
     this.props.submit(product)
-    this.setState({ ...this.defaultValues})
-    
+    this.setState({ ...this.defaultValues})  
   }
 
   render() {
@@ -83,9 +82,6 @@ class ProductForm extends React.Component {
       </Form>
     )
   }
-
-
-
 }
 
 export default ProductForm;
