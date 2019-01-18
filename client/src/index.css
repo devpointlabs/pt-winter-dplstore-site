@@ -15,11 +15,9 @@ code {
 
 .cardPreview {
   margin: 25px !important;
-  /* align-content: center !important; */
 }
 
 .cards {
-  /* align-items: center !important; */
   align-content: center !important;
 }
 
