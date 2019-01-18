@@ -1,6 +1,5 @@
 import React from 'react';
-// import { Link, } from 'react-router-dom'
-import {Card, Button, Image, Modal, ModalContent} from 'semantic-ui-react'
+import {Card, Button, Image, Modal, ModalContent} from 'semantic-ui-react';
 
 const ProductPreview = ({ name, price, description, stock, image, id, remove, edit }) => (
   <Card>
@@ -18,15 +17,7 @@ const ProductPreview = ({ name, price, description, stock, image, id, remove, ed
           { edit(id)}
         </ModalContent>  
       </Modal>
-      {/* <Button
-        // as={Link}
-        // to={ }
-      >
-        Edit Product
-      </Button> */}
       <Button
-        // as={Link}
-        // to={ }
         onClick={() => remove(id)}
       >
         Delete Product
