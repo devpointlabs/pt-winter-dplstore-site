@@ -14,7 +14,7 @@ const AdminProductPreview = ({ name, price, description, stock, image, id, remov
       <Modal trigger={<Button>Edit</Button>}>
         <Modal.Header>Edit: {name}</Modal.Header>
         <ModalContent>
-          { edit(id)}
+          { edit(id) }
         </ModalContent>  
       </Modal>
       <Button
