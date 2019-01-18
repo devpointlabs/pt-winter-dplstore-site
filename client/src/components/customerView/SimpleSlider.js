@@ -5,7 +5,6 @@ import pink from '../../Images/pink.png'
 import green from '../../Images/green.png'
 import axios from 'axios'
 
-
 class SimpleSlider extends Component {
   state = { products: [], }
 
@@ -17,9 +16,8 @@ class SimpleSlider extends Component {
   }
 
   renderFeatured = () => {
-// if boolen featured = true render item image in slider
+    // if boolen featured = true render item image in slider
   }
-
 
   render() {
     const settings = {
