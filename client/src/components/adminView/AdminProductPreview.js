@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, Button, Image, Modal, ModalContent} from 'semantic-ui-react';
 
-const ProductPreview = ({ name, price, description, stock, image, id, remove, edit }) => (
+const AdminProductPreview = ({ name, price, description, stock, image, id, remove, edit }) => (
   <Card>
     <Image src={image}/>
     <Card.Content>
@@ -26,4 +26,4 @@ const ProductPreview = ({ name, price, description, stock, image, id, remove, ed
   </Card>
 )
 
-export default ProductPreview;
+export default AdminProductPreview;

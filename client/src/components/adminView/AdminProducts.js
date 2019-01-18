@@ -1,10 +1,10 @@
 import React from 'react';
 import axios from 'axios';
 import { Card, Header, Divider, Button, Modal } from 'semantic-ui-react';
-import ProductPreview from './ProductPreview';
+import AdminProductPreview from './AdminProductPreview';
 import ProductForm from './ProductForm';
 
-class Products extends React.Component {
+class AdminProducts extends React.Component {
   state = { products: [], };
 
   componentDidMount() {
@@ -14,7 +14,7 @@ class Products extends React.Component {
 
   renderProducts = () => {
     return this.state.products.map( p => (
-      <ProductPreview key={p.id} {...p} remove={this.removeProduct} edit={this.editProduct} />
+      <AdminProductPreview key={p.id} {...p} remove={this.removeProduct} edit={this.editProduct} />
     ))
   }
 
@@ -77,4 +77,4 @@ class Products extends React.Component {
   }
 }
 
-export default Products;
+export default AdminProducts;
