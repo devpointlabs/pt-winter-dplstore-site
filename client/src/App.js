@@ -4,6 +4,7 @@ import { Container, } from 'semantic-ui-react'
 import AdminProducts from './components/adminView/AdminProducts'
 import NoMatch from './components/NoMatch';
 import Product from './components/customerView/Product';
+import CheckoutForm from './components/customerView/CheckoutForm';
 import Products from './components/customerView/Products'
 
 const App = () => (
@@ -12,6 +13,7 @@ const App = () => (
       <Switch>
         <Route exact path='/admin/products' component={AdminProducts} />
         <Route exact path='/products/:id' component={Product} />
+        <Route exact path='/checkout' component={CheckoutForm} />
         <Route exact path='/customer/products' component={Products} />
         <Route component={NoMatch} />
       </Switch>

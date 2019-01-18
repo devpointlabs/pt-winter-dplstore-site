@@ -10,10 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_11_023234) do
+ActiveRecord::Schema.define(version: 2019_01_18_023900) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "invoices", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "order_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_invoices_on_order_id"
+    t.index ["product_id"], name: "index_invoices_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "firstName"
+    t.string "middleName"
+    t.string "lastName"
+    t.string "address"
+    t.string "city"
+    t.string "zipcode"
+    t.string "state"
+    t.string "phone"
+    t.string "email"
+    t.integer "qty"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "products", force: :cascade do |t|
     t.string "name"
@@ -25,4 +50,6 @@ ActiveRecord::Schema.define(version: 2019_01_11_023234) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "invoices", "orders"
+  add_foreign_key "invoices", "products"
 end
