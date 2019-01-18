@@ -1,8 +1,8 @@
 import React from 'react';
 // import { Link, } from 'react-router-dom'
-import {Card, Button, Image} from 'semantic-ui-react'
+import {Card, Button, Image, Modal, ModalContent} from 'semantic-ui-react'
 
-const ProductPreview = ({ name, price, description, stock, image, id, remove }) => (
+const ProductPreview = ({ name, price, description, stock, image, id, remove, edit }) => (
   <Card>
     <Image src={image}/>
     <Card.Content>
@@ -12,12 +12,18 @@ const ProductPreview = ({ name, price, description, stock, image, id, remove }) 
       <Card.Description>Description: {description}</Card.Description> 
     </Card.Content>
     <Card.Content extra>
-      <Button
+      <Modal trigger={<Button>Edit</Button>}>
+        <Modal.Header>Edit: {name}</Modal.Header>
+        <ModalContent>
+          { edit(id)}
+        </ModalContent>  
+      </Modal>
+      {/* <Button
         // as={Link}
         // to={ }
       >
         Edit Product
-      </Button>
+      </Button> */}
       <Button
         // as={Link}
         // to={ }

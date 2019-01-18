@@ -25,6 +25,7 @@ class ProductForm extends React.Component {
   }
 
   render() {
+    
     const { name, price, description, stock, image, } = this.state;
     return (
       <Form onSubmit={this.handleSubmit}>
