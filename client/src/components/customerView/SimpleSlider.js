@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import blue from '../../Images/blue.png'
-import pink from '../../Images/pink.png'
-import green from '../../Images/green.png'
+import blue from '../../images/blue.png'
+import pink from '../../images/pink.png'
+import green from '../../images/green.png'
 import axios from 'axios'
 
 class SimpleSlider extends Component {

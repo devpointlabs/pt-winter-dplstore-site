@@ -1,8 +1,8 @@
 import React from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, } from 'semantic-ui-react';
 
 class ProductForm extends React.Component {
-  defaultValues = { name: "", price: "", description: "", stock: "", image: "" };
+  defaultValues = { name: "", price: "", description: "", stock: "", image: "", hidden: false, featured: false };
   state = {...this.defaultValues}
 
   componentDidMount() {
@@ -55,6 +55,22 @@ class ProductForm extends React.Component {
             required
             onChange={this.handleChange}
           />
+          {/* <Form.Field>
+            <Checkbox 
+              name='featured'
+              label='Featured'
+              value={featured}
+              onChange={this.handleChange}
+            />
+          </Form.Field>
+          <Form.Field>
+            <Checkbox 
+              name='hidden'
+              label='Hide Product'
+              value={hidden}
+              onChange={this.handleChange}
+            />
+          </Form.Field> */}
           <Form.Input 
             fluid
             name="stock"

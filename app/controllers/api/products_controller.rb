@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :update, :destroy]
+  before_action :set_product, only: [:show, :update, :destroy, :hiddenUpdate]
 
   def index
     render json: Product.all
@@ -26,9 +26,20 @@ class Api::ProductsController < ApplicationController
     end 
   end 
 
+  def hiddenUpdate
+    if @product.update(hidden: !@product.hidden)
+      render json: @product
+    else
+      render json: @product.errors, status: 422
+    end
+  end
+    
+
   def destroy
     @product.destroy
   end 
+
+
 
   private
     def set_product
@@ -36,7 +47,7 @@ class Api::ProductsController < ApplicationController
     end  
 
     def product_params
-      params.required(:product).permit(:name, :price, :description, :stock, :image)
+      params.required(:product).permit(:name, :price, :description, :stock, :image, :featured, :hidden)
     end
 
 end
