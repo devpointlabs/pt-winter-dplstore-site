@@ -8,7 +8,6 @@ import Main from './components/customerView/Main';
 import Products from './components/customerView/Products';
 import PaymentSuccess from './components/customerView/PaymentSuccess'
 
-
 const App = () => (
   <Fragment>
     <Container>
