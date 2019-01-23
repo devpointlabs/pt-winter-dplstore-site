@@ -13,10 +13,13 @@ gem 'uglifier', '>= 1.3.0'
 gem 'devise'
 gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
+gem 'braintree'
+
 
 group :development, :test do
   gem 'pry'
   gem 'faker'
+  gem 'dotenv-rails'
 end
 
 group :development do

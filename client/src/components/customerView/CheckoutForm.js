@@ -1,66 +1,19 @@
 import React from 'react';
-import { Form, Container, Segment, Step, Icon} from 'semantic-ui-react';
+import { Form, Container, Segment, Step, Icon, Button} from 'semantic-ui-react';
 
 class CheckoutForm extends React.Component {
-  defaultValues = { firstName: "", middleName:"", lastName:"", address:"", 
-  city:"", zipcode:'', phone:"", state:"", country:""};
-  state = {...this.defaultValues}
 
-  componentDidMount() {
-    if (this.props.id) {
-      this.setState({...this.props})
-    }
-  }
-
-  handleChange = (e) => {
-    const { name, value, } = e.target;
-    this.setState({ [name]: value, });
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const customer = { ...this.state }
-    this.props.submit(customer)
-    this.setState({ ...this.defaultValues})
+  saveAndContinue = (e) => {
+    e.preventDefault()
+    this.props.nextStep()
   }
 
   render() {
-    const { firstName, middleName, lastName, address, city, zipcode, 
-      phone, state, country } = this.state;
-    const options = [
-      { key: 's', text: 'Small', value: 'small' },
-      { key: 'm', text: 'Medium', value: 'medium' },
-      { key: 'l', text: 'Large', value: 'large' },
-      { key: 'unisex', text: 'Unisex', value: 'unisex' },
-    ]
+    const { values } = this.props;
+
     return (
 
       <Container>
-        <Segment>
-        <Step.Group ordered widths="equal">
-        <Step active>
-          <Icon name='credit card' />
-            <Step.Content>
-              <Step.Title>Payment</Step.Title>
-              <Step.Description>Enter billing information</Step.Description>
-            </Step.Content>
-          </Step>
-
-          <Step active>
-            <Step.Content>
-              <Step.Title>Order</Step.Title>
-              <Step.Description>Enter your shipping information</Step.Description>
-            </Step.Content>
-          </Step>
-
-          <Step completed>
-              <Step.Content>
-              <Step.Title>Confirm Order</Step.Title>
-            </Step.Content>
-          </Step>
-          </Step.Group>
-        </Segment>
-
         <Segment>
           <Form onSubmit={this.handleSubmit}>
 
@@ -72,9 +25,9 @@ class CheckoutForm extends React.Component {
                 name="firstName"
                 placeholder="First Name"
                 label="First Name"
-                value={firstName}
+                defaultValue={values.firstName}
                 required
-                onChange={this.handleChange}
+                onChange={this.props.handleChange('firstName')}
               />
 
               <Form.Input 
@@ -83,8 +36,8 @@ class CheckoutForm extends React.Component {
                 width={3}
                 placeholder="Middle Name (optional)"
                 label="Middle Name"
-                value={middleName}
-                onChange={this.handleChange}
+                defaultValue={values.middleName}
+                onChange={this.props.handleChange('middleName')}
               />
 
               <Form.Input 
@@ -93,9 +46,9 @@ class CheckoutForm extends React.Component {
                 width={4}
                 placeholder="Last Name"
                 label="Last Name"
-                value={lastName}
+                defaultValue={values.lastName}
                 required
-                onChange={this.handleChange}
+                onChange={this.props.handleChange('lastName')}
               />
 
             </Form.Group>
@@ -107,9 +60,9 @@ class CheckoutForm extends React.Component {
                 width={6}
                 placeholder="Address"
                 label="Address"
-                value={address}
+                defaultValue={values.address}
                 required
-                onChange={this.handleChange}
+                onChange={this.props.handleChange('address')}
               />
               <Form.Input 
                 fluid
@@ -117,9 +70,9 @@ class CheckoutForm extends React.Component {
                 width={3}
                 placeholder="City"
                 label="City"
-                value={city}
+                defaultValue={values.city}
                 required
-                onChange={this.handleChange}
+                onChange={this.props.handleChange('city')}
 
               />
               <Form.Input 
@@ -128,9 +81,9 @@ class CheckoutForm extends React.Component {
                 width={2}
                 placeholder="Zipcode"
                 label="Zipcode"
-                value={zipcode}
+                defaultValue={values.zipcode}
                 required
-                onChange={this.handleChange}
+                onChange={this.props.handleChange('zipcode')}
                 type='number'
                 min='0'
               />
@@ -144,9 +97,9 @@ class CheckoutForm extends React.Component {
                 width={2}
                 placeholder="State"
                 label="State"
-                value={state}
+                defaultValue={values.state}
                 required
-                onChange={this.handleChange}     
+                onChange={this.props.handleChange('state')}   
               />  
             <Form.Input 
                 fluid
@@ -155,9 +108,9 @@ class CheckoutForm extends React.Component {
                 width={2}
                 placeholder="Country"
                 label="Country"
-                value={country}
+                defaultValue={values.country}
                 required
-                onChange={this.handleChange}     
+                onChange={this.props.handleChange('country')} 
               /> 
              <Form.Input 
                 fluid
@@ -165,24 +118,26 @@ class CheckoutForm extends React.Component {
                 width={3}
                 placeholder="(xxx)-xxx-xxxx"
                 label="Phone"
-                value={phone}
+                defaultValue={values.phone}
                 required
-                onChange={this.handleChange}     
+                onChange={this.handleChange} 
+                onChange={this.props.handleChange('phone')}    
               /> 
+
+            <Form.Input 
+                fluid
+                name="email"
+                width={4}
+                placeholder="your@email.com"
+                label="Email"
+                defaultValue={values.email}
+                required
+                onChange={this.handleChange} 
+                onChange={this.props.handleChange('email')}    
+              />    
             </Form.Group>
 
-            <Form.Group>
-              <Form.Select 
-                fluid label='Size' 
-                options={options} 
-                placeholder='Size'
-                width={2} 
-              />
-            </Form.Group>
-
-            <Form.Button color='purple' size ='mini'>
-              Submit
-            </Form.Button>
+            <Button color='purple' onClick={this.saveAndContinue}>Save And Continue </Button>
 
           </Form>
         </Segment>
