@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import blue from '../../images/blue.png'
-import pink from '../../images/pink.png'
-import green from '../../images/green.png'
 import axios from 'axios'
+import { Divider } from "semantic-ui-react";
 
 class SimpleSlider extends Component {
-  state = { products: [], }
+  state = { products: [] }
 
   componentDidMount() {
     axios.get('/api/products')
@@ -16,7 +14,27 @@ class SimpleSlider extends Component {
   }
 
   renderFeatured = () => {
-    // if boolen featured = true render item image in slider
+    const products = this.state.products.filter ( p => { 
+
+      if (p.featured === true ) {
+        return this.state.products.map( p => {
+          return (
+            // grab the image and have it link
+            <Divider>
+              <div>
+                <img src={p.img} alt={p.name} /> 
+              </div>
+              <div>
+                <img src={p.img} alt={p.name} />
+              </div>
+              <div>
+                <img src={p.img} alt={p.name} />
+              </div>
+            </Divider>
+          )
+        })
+      }
+    })
   }
 
   render() {
@@ -31,15 +49,7 @@ class SimpleSlider extends Component {
       <div>
         {/* <h2> Single Item</h2> */}
         <Slider className='sliderImages' {...settings}>
-          <div>
-            <img src={blue} alt="Italian Trulli" /> 
-          </div>
-          <div>
-            <img src={pink} alt="Girl in a jacket" />
-          </div>
-          <div>
-            <img src={green} alt="Flowers in Chania" />
-          </div>
+          {this.renderFeatured()}
         </Slider>
       </div>
     );
