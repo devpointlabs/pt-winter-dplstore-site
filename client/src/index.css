@@ -16,3 +16,20 @@ code {
 .cardPreview {
   margin: 25px !important;
 }
+
+.cards {
+  align-content: center !important;
+}
+
+.featured {
+  height: 250px;
+}
+
+.sliderImages img {
+  height: 230px !important;
+  width: 100% !important;
+}
+
+.slick-dots {
+  top: 240px !important;
+}

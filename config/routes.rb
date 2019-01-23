@@ -5,5 +5,6 @@ Rails.application.routes.draw do
     resources :orders
     get '/braintree_token', to: 'braintree#token'
     post '/payment', to: 'braintree#payment'
-  end  
+    put 'products/:id/hidden', to: 'products#hiddenUpdate'
+  end
 end

@@ -5,7 +5,7 @@ import AdminProductPreview from './AdminProductPreview';
 import ProductForm from './ProductForm';
 
 class AdminProducts extends React.Component {
-  state = { products: [], };
+  state = { products: [], hidden: false };
 
   componentDidMount() {
     axios.get('/api/products')
@@ -14,7 +14,7 @@ class AdminProducts extends React.Component {
 
   renderProducts = () => {
     return this.state.products.map( p => (
-      <AdminProductPreview key={p.id} {...p} remove={this.removeProduct} edit={this.editProduct} />
+      <AdminProductPreview key={p.id} {...p} remove={this.removeProduct} edit={this.editProduct} hide={this.toggleHide} />
     ))
   }
 
@@ -32,11 +32,10 @@ class AdminProducts extends React.Component {
 
   editProduct = (id) => {
     const product = this.state.products.find( p => p.id === id )
-      
     return <ProductForm key={product.id} {...product} submit={this.submitEdit}/>
   }
   
-  submitEdit =(product) => {
+  submitEdit = (product) => {
     axios.put(`/api/products/${product.id}`, {product})
       .then(res => {
         this.setState({ product: res.data, })
@@ -52,10 +51,26 @@ class AdminProducts extends React.Component {
           const products = this.state.products.filter( p => {
             if (p.id !== id)
               return p;
-              return null
+            return null
           })
           this.setState({ products, });
         })
+  }
+
+  toggleHide = (id) => {
+    this.setState({hidden: !this.state.hidden})
+    this.settingHide(id)
+  }
+
+  settingHide = (id) => {
+    const { hidden } = this.state
+    axios.put(`/api/products/${id}/hidden`, hidden )
+    .then( res => {
+      this.setState({ product: res.data });
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }
 
   render() {
