@@ -34,12 +34,9 @@ class Api::ProductsController < ApplicationController
     end
   end
     
-
   def destroy
     @product.destroy
   end 
-
-
 
   private
     def set_product
@@ -49,5 +46,4 @@ class Api::ProductsController < ApplicationController
     def product_params
       params.required(:product).permit(:name, :price, :description, :stock, :image, :featured, :hidden)
     end
-
 end
