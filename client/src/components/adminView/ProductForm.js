@@ -1,8 +1,8 @@
 import React from 'react';
-import { Form } from 'semantic-ui-react';
+import { Form, } from 'semantic-ui-react';
 
 class ProductForm extends React.Component {
-  defaultValues = { name: "", price: "", description: "", stock: "", image: "" };
+  defaultValues = { name: "", price: "", description: "", stock: "", image: "", hidden: false, featured: false };
   state = {...this.defaultValues}
 
   componentDidMount() {

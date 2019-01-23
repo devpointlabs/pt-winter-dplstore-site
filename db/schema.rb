@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2019_01_18_023900) do
     t.string "description"
     t.integer "stock"
     t.string "image"
+    t.boolean "featured"
+    t.boolean "hidden"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,13 +1,22 @@
 import React from 'react';
-import {Card, Button, Image, Modal, ModalContent} from 'semantic-ui-react';
+import {Card, Button, Image, Modal, ModalContent, Checkbox } from 'semantic-ui-react';
 
-const AdminProductPreview = ({ name, price, description, stock, image, id, remove, edit }) => (
+const AdminProductPreview = ({ name, price, description, stock, image, id, remove, edit, featured, hidden, hide }) => (
   <Card>
     <Image src={image}/>
     <Card.Content>
       <Card.Header>{name}</Card.Header>
       <Card.Meta>${price}</Card.Meta>
       <Card.Meta>Items: {stock}</Card.Meta>
+      <Checkbox 
+        label='Featured'   
+      />
+      <br />
+      <Checkbox 
+        label='Hidden' 
+        defaultChecked={hidden}
+        onChange={() => hide(id)} 
+      />
       <Card.Description>Description: {description}</Card.Description> 
     </Card.Content>
     <Card.Content extra>
