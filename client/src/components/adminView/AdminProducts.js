@@ -32,7 +32,6 @@ class AdminProducts extends React.Component {
 
   editProduct = (id) => {
     const product = this.state.products.find( p => p.id === id )
-      
     return <ProductForm key={product.id} {...product} submit={this.submitEdit}/>
   }
   
