@@ -8,11 +8,11 @@ import BraintreeSubmitButton from './BraintreeSubmitButton'
 
 class BraintreeDrop extends React.Component {
   state = { 
-            loaded: false, 
-            token: '', 
-            redirect: false, 
-            transactionId:'' ,
-          }
+    loaded: false, 
+    token: '', 
+    redirect: false, 
+    transactionId:'' ,
+  }
 
   componentDidMount(){
     axios.get('/api/braintree_token')
