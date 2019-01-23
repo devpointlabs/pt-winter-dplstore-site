@@ -9,8 +9,7 @@ const AdminProductPreview = ({ name, price, description, stock, image, id, remov
       <Card.Meta>${price}</Card.Meta>
       <Card.Meta>Items: {stock}</Card.Meta>
       <Checkbox 
-        label='Featured'
-         
+        label='Featured'   
       />
       <br />
       <Checkbox 
