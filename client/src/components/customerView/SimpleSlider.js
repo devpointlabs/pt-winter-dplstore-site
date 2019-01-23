@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
-import blue from '../../Images/blue.png'
-import pink from '../../Images/pink.png'
-import green from '../../Images/green.png'
+// import blue from '../../images/blue.png';
+// import pink from '../../images/pink.png';
+// import green from '../../images/green.png';
 import axios from 'axios'
 
 class SimpleSlider extends Component {
@@ -22,23 +22,27 @@ class SimpleSlider extends Component {
   render() {
     const settings = {
       dots: true,
+      fade: true,
       infinite: true,
-      speed: 500,
+      // speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 4000,
+      pauseOnHover: true,
     };
     return (
       <div>
         {/* <h2> Single Item</h2> */}
         <Slider className='sliderImages' {...settings}>
           <div>
-            <img src={blue} alt="Italian Trulli" /> 
+            <img src="https://robohash.org/providentsimiliquevelit.png" alt="Italian Trulli" /> 
           </div>
           <div>
-            <img src={pink} alt="Girl in a jacket" />
+            <img src="https://robohash.org/facereeosid.png" alt="Girl in a jacket" />
           </div>
           <div>
-            <img src={green} alt="Flowers in Chania" />
+            <img src='https://robohash.org/architectoomnisdeleniti.png' alt="Flowers in Chania" />
           </div>
         </Slider>
       </div>
