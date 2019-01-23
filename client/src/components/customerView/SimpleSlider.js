@@ -3,7 +3,6 @@ import Slider from "react-slick";
 import axios from 'axios'
 import { Divider } from "semantic-ui-react";
 
-
 class SimpleSlider extends Component {
   state = { products: [] }
 
@@ -37,7 +36,6 @@ class SimpleSlider extends Component {
       }
     })
   }
-
 
   render() {
     const settings = {
