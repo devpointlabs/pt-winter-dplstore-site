@@ -40,14 +40,16 @@ class SimpleSlider extends Component {
   render() {
     const settings = {
       dots: true,
+      fade: true,
       infinite: true,
-      speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      autoplay: true,
+      speed: 4000,
+      pauseOnHover: true,
     };
     return (
       <div>
-        {/* <h2> Single Item</h2> */}
         <Slider className='sliderImages' {...settings}>
           {this.renderFeatured()}
         </Slider>
