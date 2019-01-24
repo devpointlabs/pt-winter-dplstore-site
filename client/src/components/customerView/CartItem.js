@@ -51,30 +51,29 @@ class CartItem extends React.Component (
                 <div className="row">
                     <div className="cart__title-container">
                         <h2 className="cart__title-container__title">
-                            Ваша корзина
+                            Cart
                         </h2>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-12">
                         <table className="cart__table">
-
                             <tbody>
                                 <tr>
-                                    <th colSpan="5">Список товаров</th>
+                                    <th colSpan="5">Cart</th>
                                 </tr>                           
                                 {itemsInTable}  
                                 <tr>
                                     <td></td>
                                     <td></td>
-                                    <td>Итого:</td>
+                                    <td>Price:</td>
                                     <td>{totalPrice} руб.</td>
                                     <td></td>
                                 </tr>                                                                   
                             </tbody>
                         </table>
                         <div className="cart__next-button-container">
-                            <Link to="/checkout"><button className="cart__next-button">Далее >></button></Link>
+                            <Link to="/checkout"><button className="cart__next-button">Button</button></Link>
                         </div>
                     </div>              
                 </div>
