@@ -30,7 +30,9 @@ class Products extends React.Component {
         <Container className='featured'>
           <SimpleSlider />
         </Container>
-        
+        <br />
+        <br />
+
         <Header textAlign='center'>FEATURED PRODUCTS</Header>
           <Divider />
             <Card.Group nameClass='cards' itemsPerRow={3}>

@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import axios from 'axios'
-import { Divider } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
+import { Link } from 'react-router-dom'
+
 
 class SimpleSlider extends Component {
   state = { products: [] }
@@ -14,27 +16,30 @@ class SimpleSlider extends Component {
   }
 
   renderFeatured = () => {
-    const products = this.state.products.filter ( p => { 
+    const { products } = this.state
 
-      if (p.featured === true ) {
-        return this.state.products.map( p => {
+        return products.map( p => {
+          if (p.featured === true ) {
           return (
             // grab the image and have it link
-            <Divider>
+            <div>
               <div>
-                <img src={p.img} alt={p.name} /> 
+                <Link to={`/products/${p.id}`}>
+                  <img src={p.image} alt={p.name} /> 
+                </Link>
+              </div>
+              {/* <div>
+                <img src={p.image} alt={p.name} />
               </div>
               <div>
-                <img src={p.img} alt={p.name} />
-              </div>
-              <div>
-                <img src={p.img} alt={p.name} />
-              </div>
-            </Divider>
+                <img src={p.image} alt={p.name} />
+              </div> */}
+            </div>
           )
+        }
         })
-      }
-    })
+      
+    
   }
 
   render() {

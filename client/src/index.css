@@ -14,7 +14,7 @@ code {
 }
 
 .cardPreview {
-  margin: 25px !important;
+  margin: 45px !important;
 }
 
 .cards {
@@ -26,10 +26,13 @@ code {
 }
 
 .sliderImages img {
-  height: 230px !important;
-  width: 100% !important;
+  height: 300px !important;
+  width: 250px !important;
+  display: block !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .slick-dots {
-  top: 240px !important;
+  top: 295px !important;
 }
