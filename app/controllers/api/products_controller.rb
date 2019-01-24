@@ -1,5 +1,5 @@
 class Api::ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :update, :destroy, :hiddenUpdate]
+  before_action :set_product, only: [:show, :update, :destroy, :hiddenUpdate, :featuredUpdate]
 
   def index
     render json: Product.all
@@ -28,6 +28,14 @@ class Api::ProductsController < ApplicationController
 
   def hiddenUpdate
     if @product.update(hidden: !@product.hidden)
+      render json: @product
+    else
+      render json: @product.errors, status: 422
+    end
+  end
+
+  def featuredUpdate
+    if @product.update(featured: !@product.featured)
       render json: @product
     else
       render json: @product.errors, status: 422
