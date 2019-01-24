@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, Button, Image, Modal, ModalContent, Checkbox } from 'semantic-ui-react';
 
-const AdminProductPreview = ({ name, price, description, stock, image, id, remove, edit, featured, hidden, hide }) => (
+const AdminProductPreview = ({ name, price, description, stock, image, id, remove, edit, featured, hidden, hide, feature }) => (
   <Card>
     <Image src={image}/>
     <Card.Content>
@@ -9,7 +9,9 @@ const AdminProductPreview = ({ name, price, description, stock, image, id, remov
       <Card.Meta>${price}</Card.Meta>
       <Card.Meta>Items: {stock}</Card.Meta>
       <Checkbox 
-        label='Featured'   
+        label='Featured'
+        defaultChecked={featured}
+        onChange={() => feature(id)}   
       />
       <br />
       <Checkbox 

@@ -5,7 +5,7 @@ import AdminProductPreview from './AdminProductPreview';
 import ProductForm from './ProductForm';
 
 class AdminProducts extends React.Component {
-  state = { products: [], hidden: false };
+  state = { products: [], hidden: false, featured: false };
 
   componentDidMount() {
     axios.get('/api/products')
@@ -14,7 +14,7 @@ class AdminProducts extends React.Component {
 
   renderProducts = () => {
     return this.state.products.map( p => (
-      <AdminProductPreview key={p.id} {...p} remove={this.removeProduct} edit={this.editProduct} hide={this.toggleHide} />
+      <AdminProductPreview key={p.id} {...p} remove={this.removeProduct} edit={this.editProduct} hide={this.toggleHide} feature={this.toggleFeatured}/>
     ))
   }
 
@@ -65,6 +65,22 @@ class AdminProducts extends React.Component {
   settingHide = (id) => {
     const { hidden } = this.state
     axios.put(`/api/products/${id}/hidden`, hidden )
+    .then( res => {
+      this.setState({ product: res.data });
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+  toggleFeatured = (id) => {
+    this.setState({featured: !this.state.featured})
+    this.settingFeatured(id)
+  }
+
+  settingFeatured = (id) => {
+    const { featured } = this.state
+    axios.put(`/api/products/${id}/featured`, featured )
     .then( res => {
       this.setState({ product: res.data });
     })
