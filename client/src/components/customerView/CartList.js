@@ -44,8 +44,6 @@ const CartList (cart)
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      // <Divider />
-
     )
   })
 }
