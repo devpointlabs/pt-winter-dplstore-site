@@ -4,7 +4,6 @@ import axios from 'axios'
 import { Card } from "semantic-ui-react";
 import { Link } from 'react-router-dom'
 
-
 class SimpleSlider extends Component {
   state = { products: [] }
 
@@ -29,7 +28,6 @@ class SimpleSlider extends Component {
       }
     })
   }
-
 
   render() {
     const settings = {
