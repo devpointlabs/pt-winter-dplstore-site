@@ -16,12 +16,20 @@ class Products extends React.Component {
   }
 
   renderProducts = () => {
-    return this.state.products.map( p => (
-      <Link to={`/products/${p.id}`}>
-        <ProductPreview key={p.id} {...p} remove={this.removeProduct} />
-      </Link>
-    ))
+    const { products } = this.state
+
+    return products.map(p => {
+      if (p.hidden === false ) {
+        return (
+          <Link to={`/products/${p.id}`}>
+            <ProductPreview key={p.id} {...p} remove={this.removeProduct} />
+          </Link>
+        )
+      }
+    })
   }
+
+
 
   render() {
     return (

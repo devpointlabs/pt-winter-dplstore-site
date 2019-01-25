@@ -18,29 +18,18 @@ class SimpleSlider extends Component {
   renderFeatured = () => {
     const { products } = this.state
 
-        return products.map( p => {
-          if (p.featured === true ) {
-          return (
-            // grab the image and have it link
-            <div>
-              <div>
-                <Link to={`/products/${p.id}`}>
-                  <img src={p.image} alt={p.name} /> 
-                </Link>
-              </div>
-              {/* <div>
-                <img src={p.image} alt={p.name} />
-              </div>
-              <div>
-                <img src={p.image} alt={p.name} />
-              </div> */}
-            </div>
-          )
-        }
-        })
-      
-    
+    return products.map(p => {
+      if (p.featured === true) {
+        return (
+          // grab the image and have it link
+          <div>
+             <img src={p.image} alt={p.name} />
+          </div>
+       )
+      }
+    })
   }
+
 
   render() {
     const settings = {
