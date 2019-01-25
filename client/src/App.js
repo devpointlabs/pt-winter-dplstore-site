@@ -11,6 +11,8 @@ import Products from './components/customerView/Products'
 import Home from './components/Home'
 import Navbar from './components/Navbar'
 import Cart from './components/customerView/Cart'
+import Login from './components/Login';
+import Register from './components/Register';
 
 const App = () => (
   <Fragment>
@@ -24,6 +26,8 @@ const App = () => (
         <Route exact path='/cart/' component={Cart} />
         <Route exact path='/checkout' component={Main} />
         <Route exact path='/payment_success' component={PaymentSuccess} />
+        <Route exact path="/login" component={Login} />
+        <Route exact path="/register" component={Register} />
         <Route component={NoMatch} />
       </Switch>
     </Container>

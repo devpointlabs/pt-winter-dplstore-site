@@ -76,6 +76,9 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
+    devise_token_auth (1.0.0)
+      devise (> 3.5.2, < 4.6)
+      rails (>= 4.2.0, < 6)
     dotenv (2.6.0)
     dotenv-rails (2.6.0)
       dotenv (= 2.6.0)
@@ -87,6 +90,7 @@ GEM
     ffi (1.10.0)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
+    hashie (3.6.0)
     i18n (1.5.1)
       concurrent-ruby (~> 1.0)
     io-like (0.3.0)
@@ -114,6 +118,9 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.0)
       mini_portile2 (~> 2.4.0)
+    omniauth (1.9.0)
+      hashie (>= 3.4.6, < 3.7.0)
+      rack (>= 1.6.2, < 3)
     orm_adapter (0.5.0)
     pg (1.1.4)
     pry (0.12.2)
@@ -212,11 +219,12 @@ DEPENDENCIES
   braintree
   capybara (>= 2.15)
   chromedriver-helper
-  devise
+  devise_token_auth
   dotenv-rails
   faker
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  omniauth
   pg
   pry
   puma (~> 3.11)
