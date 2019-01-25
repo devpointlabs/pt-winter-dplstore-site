@@ -38,7 +38,6 @@ class Products extends React.Component {
         </Container>
         <br />
         <br />
-
         <Header textAlign='center'>FEATURED PRODUCTS</Header>
           <Divider />
             <Card.Group nameClass='cards' itemsPerRow={3}>
