@@ -8,9 +8,9 @@ class Product extends React.Component {
   state = { product: {}, cartItems: [], edit: false }
 
   componentDidMount() {
-    axios.get('/api/products')
+    axios.get(`/api/products/${this.props.match.params.id}`)
       .then(res => {
-        this.setState({ products: res.data })
+        this.setState({ product: res.data })
       })
   }
 

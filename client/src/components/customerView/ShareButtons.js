@@ -75,7 +75,7 @@ import { List } from 'semantic-ui-react';
   </List.Item>
 
   <List.Item>
-  <PinterestShareButton
+  {/* <PinterestShareButton
   url="www.pinterest.com"
   quote="pinterest"
   className="pinterestButton">
@@ -83,7 +83,7 @@ import { List } from 'semantic-ui-react';
     size={40}
     round
   />
-  </PinterestShareButton>
+  </PinterestShareButton> */}
   </List.Item>
   
  <List.Item>

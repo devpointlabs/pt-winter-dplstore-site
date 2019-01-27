@@ -20,13 +20,13 @@ class Cart extends Component {
   //   this.setState( { cart })
   // }
 
-  removeFromCart = (itemId) => {
-    const items = this.state.items.filter( item.id => {
-      if (items.id !== id)
-      return item
-  });
-    this.setState({ items });
-  );
+  // removeFromCart = (itemId) => {
+  //   const items = this.state.items.filter( item => {
+  //     if (items.id !== id)
+  //       return item
+  //   });
+  //     this.setState({ items });
+  // };
 
   showCart = () => {
     return this.state.products.map(p => {
