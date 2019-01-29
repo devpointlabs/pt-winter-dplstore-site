@@ -25,9 +25,9 @@ const App = () => (
       <Container>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/admin/products' component={AdminProducts} />
-          <Route exact path='/admin/invoices' component={AdminInvoices} />
-          <Route exact path='/admin/invoices/:id' component={AdminInvoice} />
+          <ProtectedRoute exact path='/admin/products' component={AdminProducts} />
+          <ProtectedRoute exact path='/admin/invoices' component={AdminInvoices} />
+          <ProtectedRoute exact path='/admin/invoices/:id' component={AdminInvoice} />
           <Route exact path='/products/:id' component={Product} />
           <Route exact path='/customer/products' component={Products} />
           <Route exact path='/cart/' component={Cart} />

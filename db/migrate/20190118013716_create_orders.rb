@@ -10,8 +10,6 @@ class CreateOrders < ActiveRecord::Migration[5.2]
       t.string :state
       t.string :phone
       t.string :email
-      t.integer :qty
-      t.text :comment
     
       t.timestamps
     end
