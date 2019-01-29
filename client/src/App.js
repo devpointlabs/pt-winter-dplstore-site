@@ -17,6 +17,9 @@ import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminInvoices from './components/adminView/AdminInvoices'
 import AdminInvoice from './components/adminView/AdminInvoice'
+import Admin from './components/adminView/Admin'
+
+
 
 const App = () => (
   <Fragment>
@@ -25,9 +28,10 @@ const App = () => (
       <Container>
         <Switch>
           <Route exact path='/' component={Home} />
-          <Route exact path='/admin/products' component={AdminProducts} />
-          <Route exact path='/admin/invoices' component={AdminInvoices} />
-          <Route exact path='/admin/invoices/:id' component={AdminInvoice} />
+          <ProtectedRoute exact path='/admin/products' component={AdminProducts} />
+          <ProtectedRoute exact path='/admin/invoices' component={AdminInvoices} />
+          <ProtectedRoute exact path='/admin/invoices/:id' component={AdminInvoice} />
+          <ProtectedRoute exact path='/admin' component={Admin} />
           <Route exact path='/products/:id' component={Product} />
           <Route exact path='/customer/products' component={Products} />
           <Route exact path='/cart/' component={Cart} />
