@@ -93,7 +93,6 @@ class Product extends React.Component {
                     </Item.Extra>
                     </Item.Content>
                   </Grid.Row>
-              
                 </Grid>
               </Grid.Column>      
             </Grid>
@@ -101,8 +100,7 @@ class Product extends React.Component {
     )
   }
 
-render() {
-    // const { edit } = this.state
+  render() {
     return (
         <div>
         <Segment style={{margin: '15px'}}>
@@ -110,6 +108,7 @@ render() {
         </Segment>
         </div>
     )
+  }
 }
-}
+
 export default Product;
