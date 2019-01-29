@@ -118,7 +118,6 @@ class CheckoutForm extends React.Component {
                 fluid
                 width={3}
                 name="state"
-                // width={2}
                 placeholder="State"
                 label="State"
                 defaultValue={values.state}
