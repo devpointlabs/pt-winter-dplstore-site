@@ -57,7 +57,7 @@ class CheckoutForm extends React.Component {
               <Form.Input 
                 fluid
                 name="middleName"
-                width={3}
+                width={4}
                 placeholder="Middle Name (optional)"
                 label="Middle Name"
                 defaultValue={values.middleName}
@@ -101,7 +101,7 @@ class CheckoutForm extends React.Component {
               <Form.Input 
                 fluid
                 name="zipcode"
-                width={2}
+                width={3}
                 placeholder="Zipcode"
                 label="Zipcode"
                 defaultValue={values.zipcode}
@@ -130,7 +130,7 @@ class CheckoutForm extends React.Component {
                 placeholder="(xxx)-xxx-xxxx"
                 label="Phone"
                 defaultValue={values.phone}
-                required
+                required 
                 onChange={this.props.handleChange('phone')}    
               /> 
             <Form.Input 
