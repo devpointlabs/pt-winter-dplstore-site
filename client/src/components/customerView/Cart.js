@@ -21,12 +21,12 @@ class Cart extends Component {
   // }
 
   // removeFromCart = (itemId) => {
-  //   const items = this.state.items.filter( item => {
+  //   const items = this.state.items.filter( item.id => {
   //     if (items.id !== id)
-  //       return item
-  //   });
-  //     this.setState({ items });
-  // };
+  //     return item
+  // });
+  //   this.setState({ items });
+  // );
 
   showCart = () => {
     return this.state.products.map(p => {

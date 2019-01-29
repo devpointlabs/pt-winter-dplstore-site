@@ -16,11 +16,17 @@ class Products extends React.Component {
   }
 
   renderProducts = () => {
-    return this.state.products.map( p => (
-      <Link to={`/products/${p.id}`}>
-        <ProductPreview key={p.id} {...p} remove={this.removeProduct} />
-      </Link>
-    ))
+    const { products } = this.state
+
+    return products.map(p => {
+      if (p.hidden === false ) {
+        return (
+          <Link to={`/products/${p.id}`}>
+            <ProductPreview key={p.id} {...p} remove={this.removeProduct} />
+          </Link>
+        )
+      }
+    })
   }
 
   render() {
@@ -30,7 +36,8 @@ class Products extends React.Component {
         <Container className='featured'>
           <SimpleSlider />
         </Container>
-        
+        <br />
+        <br />
         <Header textAlign='center'>FEATURED PRODUCTS</Header>
           <Divider />
             <Card.Group nameClass='cards' itemsPerRow={3}>
