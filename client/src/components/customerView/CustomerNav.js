@@ -2,12 +2,8 @@ import React, { Component } from 'react';
 import Logo from '../../images/DPL_Mark.png';
 import { NavLink } from 'react-router-dom';
 import { Menu, Icon } from 'semantic-ui-react';
-// import { AuthConsumer, } from '../providers/AuthProvider';
-// import AdminNav from './components/adminView/AdminNav'
-
 
 class CustomerNav extends Component {
-
 
   render() {
     return (
@@ -29,6 +25,4 @@ class CustomerNav extends Component {
   }
 }
 
-
 export default CustomerNav;
-
