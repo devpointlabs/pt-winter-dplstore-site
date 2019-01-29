@@ -73,4 +73,3 @@ export default class ConnectedRegister extends React.Component {
     )
   }
 }
-
