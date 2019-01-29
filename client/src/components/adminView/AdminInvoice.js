@@ -21,13 +21,13 @@ class AdminInvoice extends React.Component {
 
   renderProduct = (product_id) => {
     const product = this.state.products.find( p => p.id === product_id);
-    return <ProductInvoice key={product.id} {...product} />
+    return product && <ProductInvoice key={product.id} {...product} />
   }
   
   renderOrder = (order_id) => {
     const order = this.state.orders.find( o => o.id === order_id);
     debugger
-    return <OrderInvoice key={order.id} {...order} />
+    return order && <OrderInvoice key={order.id} {...order} />
   }
 
   render () {
