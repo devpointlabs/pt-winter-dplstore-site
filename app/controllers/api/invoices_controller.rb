@@ -19,7 +19,6 @@ class Api::InvoicesController < ApplicationController
   end 
 
   private
-
     def set_order
       @order = Order.find(params[:order_id])
     end
@@ -31,5 +30,4 @@ class Api::InvoicesController < ApplicationController
     def invoice_params
       params.required(:invoice).permit(:transactionId, :order_id)
     end
-
 end
