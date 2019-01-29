@@ -9,3 +9,25 @@
     featured: false,
   )
 end
+
+5.times do
+  order = Order.create(
+    firstName: Faker::Name.first_name,
+    middleName: Faker::Name.middle_name,
+    lastName: Faker::Name.last_name,
+    address: Faker::Address.street_address,
+    city: Faker::Address.city,
+    zipcode: Faker::Address.zip,
+    state: Faker::Address.state,
+    phone: Faker::PhoneNumber.phone_number,
+    email: Faker::Internet.email,
+    qty: Faker::Number.number(1),
+    comment: Faker::Lorem.sentence,
+  )
+    Invoice.create(
+      product_id: rand(1..20),
+      order_id: order.id,
+    )
+end
+
+puts "seeded successfully"

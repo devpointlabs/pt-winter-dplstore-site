@@ -11,12 +11,14 @@ const AdminProductPreview = ({ name, price, description, stock, image, id, remov
       <Checkbox 
         label='Featured'
         defaultChecked={featured}
+        disabled = { hidden ? true : false }
         onChange={() => feature(id)}   
       />
       <br />
       <Checkbox 
         label='Hidden' 
         defaultChecked={hidden}
+        disabled = { featured ? true : false }
         onChange={() => hide(id)} 
       />
       <Card.Description>Description: {description}</Card.Description> 

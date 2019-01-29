@@ -37,7 +37,6 @@ import { List } from 'semantic-ui-react';
   />
   </TwitterShareButton>
   </List.Item>
-
   <List.Item>
   <GooglePlusShareButton
   url="www.google.com"
@@ -73,19 +72,6 @@ import { List } from 'semantic-ui-react';
   />
   </WhatsappShareButton>
   </List.Item>
-
-  <List.Item>
-  <PinterestShareButton
-  url="www.pinterest.com"
-  quote="pinterest"
-  className="pinterestButton">
-  <PinterestIcon
-    size={40}
-    round
-  />
-  </PinterestShareButton>
-  </List.Item>
-  
  <List.Item>
  <EmailShareButton
  url="www.devpointlabs.com"
