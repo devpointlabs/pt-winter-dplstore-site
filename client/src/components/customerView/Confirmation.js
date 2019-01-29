@@ -16,13 +16,6 @@ class Confirmation extends Component{
         this.props.prevStep();
     }
 
-    // handleSubmit = (e) => {
-    //     e.preventDefault();
-    //     const order = { ...this.state }
-    //     this.props.submit(order)
-    //     this.setState({ ...this.values})  
-    //   }
-
     render(){
         const {values: { firstName, middleName, lastName, address, city, zipcode, 
            phone, state, email}} = this.props;
@@ -53,9 +46,7 @@ class Confirmation extends Component{
                 </Step>
             </Step.Group>
           </Segment>
-      
-       
-
+     
                 <h1 className="ui centered">Confirm your Details</h1>
                 <p>Click Confirm if the following details have been correctly entered</p>
                 <List  onSubmit={this.handleSubmit}>
