@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Logo from '../images/DPL_Mark.png';
+import Logo from '../Images/DPL_Mark.png';
 import { NavLink, withRouter, Link } from 'react-router-dom';
 import { Menu, Icon } from 'semantic-ui-react';
 import { AuthConsumer, } from '../providers/AuthProvider';

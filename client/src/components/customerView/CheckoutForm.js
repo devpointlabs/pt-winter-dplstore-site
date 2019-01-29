@@ -116,7 +116,7 @@ class CheckoutForm extends React.Component {
             <Form.Group>
             <Form.Input 
                 fluid
-                width={2}
+                width={3}
                 name="state"
                 width={2}
                 placeholder="State"
@@ -125,21 +125,10 @@ class CheckoutForm extends React.Component {
                 required
                 onChange={this.props.handleChange('state')}   
               />  
-            <Form.Input 
-                fluid
-                width={3}
-                name="Country"
-                width={2}
-                placeholder="Country"
-                label="Country"
-                defaultValue={values.country}
-                required
-                onChange={this.props.handleChange('country')} 
-              /> 
              <Form.Input 
                 fluid
                 name="phone"
-                width={3}
+                width={4}
                 placeholder="(xxx)-xxx-xxxx"
                 label="Phone"
                 defaultValue={values.phone}
@@ -147,11 +136,10 @@ class CheckoutForm extends React.Component {
                 onChange={this.handleChange} 
                 onChange={this.props.handleChange('phone')}    
               /> 
-
             <Form.Input 
                 fluid
                 name="email"
-                width={4}
+                width={5}
                 placeholder="your@email.com"
                 label="Email"
                 defaultValue={values.email}
