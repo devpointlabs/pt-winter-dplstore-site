@@ -37,7 +37,7 @@ code {
   top: 295px !important;
 }
 
-/* .navCart {
-  align-content: right !important; 
-  filter: 'grayscale(100%)' !important;
-} */
+.register {
+  float: right !important;
+  color: black !important;
+}
