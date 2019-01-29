@@ -5,56 +5,35 @@ import PaymentForm from './PaymentForm';
 import Confirmation from './Confirmation';
 import CheckoutBar from './CheckoutBar';
 import PaymentSuccess from './PaymentSuccess';
+import axios from 'axios'
 
 class Main extends Component {
-    state = {
-        step: 1, step1: false, step2: false, 
-        firstName: "", middleName:"", lastName:"", address:"", 
-        city:"", zipcode:'', phone:"", state:"", country:"", email: "",
-        amount: 10
-    }
+    // state = {
+    //     step: 1,
+    //     firstName: "", middleName:"", lastName:"", address:"", 
+    //     city:"", zipcode:'', phone:"", state:"", country:"", email: "",
+    //     amount: 10
+    // }
 
+    state = { order: {}, step: 1, amount: 14 }
+
+    submitOrder = (order) => {
+        axios.post('/api/orders', {order})
+          .then(res => {
+            this.setState({ order:  {} })
+            // window.location.reload();
+          })
+      }
+   
     nextStep = () => {
         const { step } = this.state
-        // switch (step){
-        // case 1: 
-        // this.setState({
-        //     step1: !this.state.step1 })
-        //     break;
-        // case 2: 
-        // this.setState({
-        //     step2: !this.state.step2 })
-        //     break;
-        // default: break;
-        // }
         this.setState({
-            // step1: true,
             step : step + 1
         })
     }
 
-    // confirmStep = () => {
-    //     const { step } = this.state
-    //     this.setState({
-    //         step2: true,
-    //         step : step + 1
-    //     })
-    // }
-
     prevStep = () => {
         const { step } = this.state
-        // switch (step){
-        // case 1: 
-        // this.setState({
-        //     step1: !this.state.step1 })
-        //     break;
-        // case 2: 
-        // this.setState({
-        //     step2: !this.state.step2 })
-        //     break;
-        // default: break;
-        // }
-
         this.setState({
             step : step - 1
         })
@@ -75,7 +54,7 @@ class Main extends Component {
         switch(step) {
         case 1:
             return <div>
-                    <CheckoutBar status={step1}/>
+                    {/* <CheckoutBar/> */}
                     <CheckoutForm 
                     nextStep={this.nextStep} 
                     handleChange = {this.handleChange}
@@ -84,16 +63,17 @@ class Main extends Component {
                     </div>
         case 2:
             return  <div>
-                    <CheckoutBar status={this.state.step2}/> 
+                    {/* <CheckoutBar/>  */}
                     <Confirmation 
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
                     values={values}
+                    submit={this.submitOrder}
                     />
                     </div>
         case 3:
             return  <div>
-                    <CheckoutBar status={this.state.step1}/>
+                    {/* <CheckoutBar/> */}
                     <PaymentForm 
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}

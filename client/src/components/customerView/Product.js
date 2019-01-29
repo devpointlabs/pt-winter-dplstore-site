@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Segment, Header, Item, Grid, Button, Icon } from 'semantic-ui-react';
-import Logo from '../../images/DPL_Mark.png';
+import Logo from '../../Images/DPL_Mark.png';
 import ShareButtons from './ShareButtons'; 
 
 class Product extends React.Component {

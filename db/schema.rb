@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2019_01_25_023825) do
     t.bigint "product_id"
     t.bigint "order_id"
     t.bigint "user_id"
+    t.string "transactionId"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["order_id"], name: "index_invoices_on_order_id"
@@ -36,8 +37,6 @@ ActiveRecord::Schema.define(version: 2019_01_25_023825) do
     t.string "state"
     t.string "phone"
     t.string "email"
-    t.integer "qty"
-    t.text "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
