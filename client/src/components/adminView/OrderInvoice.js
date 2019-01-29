@@ -1,9 +1,6 @@
 import React from 'react';
 import { Segment, Table  } from 'semantic-ui-react';
 
-  // order: { firstName, middleName, lastName, address, city, zipcode, state, phone, email }, 
-
-
 const OrderInvoice = ({ firstName, lastName, address, city, zipcode, state, phone, email }) => (
     <Table singleLine>
       <Table.Header>
