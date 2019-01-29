@@ -4,7 +4,6 @@ import { Header, Segment, Container,  Divider, Button, Grid, Icon, Card, } from 
 import ProductInvoice from './ProductInvoice';
 import OrderInvoice from './OrderInvoice';
 
-
 class AdminInvoice extends React.Component {
   state = { invoice: {}, orders: [], products:[] }
 
@@ -49,7 +48,6 @@ class AdminInvoice extends React.Component {
       )
     }
   }
-
 }
 
 export default AdminInvoice;
