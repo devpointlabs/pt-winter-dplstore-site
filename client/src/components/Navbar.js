@@ -4,12 +4,10 @@ import { NavLink, withRouter, Link } from 'react-router-dom';
 import { Menu, Icon } from 'semantic-ui-react';
 import { AuthConsumer, } from '../providers/AuthProvider';
 
-
 class NavBar extends Component {
 
   rightNavItems = () => {
     const { auth: { user, handleLogout, }, location, } = this.props;
-    
     if (user) {
       return (
         <Menu.Menu position='right'>
@@ -61,8 +59,6 @@ class NavBar extends Component {
     )
   }
 }
-
-// export default NavBar;
 
 export class ConnectedNavbar extends Component {
   render() {
