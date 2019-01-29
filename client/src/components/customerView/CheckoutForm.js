@@ -74,7 +74,6 @@ class CheckoutForm extends React.Component {
                 required
                 onChange={this.props.handleChange('lastName')}
               />
-
             </Form.Group>
 
             <Form.Group>
