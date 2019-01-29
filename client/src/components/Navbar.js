@@ -5,10 +5,8 @@ import AdminNav from '../components/adminView/AdminNav'
 import CustomerNav from '../components/customerView/CustomerNav'
 import { AuthConsumer } from '../providers/AuthProvider';
 
-
 class Navbar extends Component {
    
-  
   navigation = () => {
     const { user } = this.props.auth ;
     if (user) {

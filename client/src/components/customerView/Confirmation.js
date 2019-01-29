@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import { Button, List } from 'semantic-ui-react';
+import { Button, List, Segment, Step, Icon } from 'semantic-ui-react';
 
 class Confirmation extends Component{
     
     SaveAndContinue = (e) => {
         e.preventDefault();
         this.props.nextStep();
+
+        const {values} = this.props
+        this.props.submit(values)
     }
 
     back  = (e) => {
@@ -15,13 +18,38 @@ class Confirmation extends Component{
 
     render(){
         const {values: { firstName, middleName, lastName, address, city, zipcode, 
-          country, phone, state, email}} = this.props;
-
+           phone, state, email}} = this.props;
+     
         return(
             <div>
+            <Segment>
+            <Step.Group ordered widths="equal">
+              <Step completed>
+                <Step.Content>
+                  <Step.Title>Order details</Step.Title>
+                  <Step.Description>Enter your personal details</Step.Description>
+                 </Step.Content>
+               </Step>
+  
+               <Step active>
+                <Step.Content>
+                  <Step.Title>Confirm Personal Details </Step.Title>
+                </Step.Content>
+               </Step>
+  
+               <Step disabled>
+                <Icon name='credit card' />
+                  <Step.Content>
+                    <Step.Title>Payment</Step.Title>
+                    <Step.Description>Enter credit card information</Step.Description>
+                  </Step.Content>
+                </Step>
+            </Step.Group>
+          </Segment>
+     
                 <h1 className="ui centered">Confirm your Details</h1>
                 <p>Click Confirm if the following details have been correctly entered</p>
-                <List>
+                <List  onSubmit={this.handleSubmit}>
                     <List.Item>
                         <List.Icon name='users' />
                         <List.Content>First Name: {firstName}</List.Content>
@@ -46,7 +74,7 @@ class Confirmation extends Component{
                         <List.Icon name='map marker alternate' />
                         <List.Content>{address}</List.Content>
                         <List.Content>{city}</List.Content>
-                        <List.Content>{city},{zipcode},{state},{country}</List.Content>
+                        <List.Content>{city},{zipcode},{state}</List.Content>
                     </List.Item>
                 </List>
 

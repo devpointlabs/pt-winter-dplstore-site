@@ -1,7 +1,6 @@
 import React from 'react';
 import axios from 'axios';
 import { Segment, Header, Item, Grid, Button, Icon } from 'semantic-ui-react';
-import Logo from '../../images/DPL_Mark.png';
 import ShareButtons from './ShareButtons'; 
 
 class Product extends React.Component {
@@ -21,12 +20,7 @@ class Product extends React.Component {
   showProduct = () => {
     const { product: { name, price, description, stock, image, id } } = this.state
     return (
-      // remove LOGO once NavBar with Logo is created
       <div style={{padding:'5px}'}}>
-        <img 
-          src={Logo} alt="logo" 
-          style={{width:'150px', filter: 'grayscale(100%)'}} 
-        />
         <Grid divided stackable columns={2}>
           <Grid.Column>
             <Item>

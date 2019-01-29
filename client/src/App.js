@@ -19,8 +19,6 @@ import AdminInvoices from './components/adminView/AdminInvoices'
 import AdminInvoice from './components/adminView/AdminInvoice'
 import Admin from './components/adminView/Admin'
 
-
-
 const App = () => (
   <Fragment>
     <Navbar />

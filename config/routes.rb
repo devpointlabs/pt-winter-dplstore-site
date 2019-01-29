@@ -8,5 +8,7 @@ Rails.application.routes.draw do
     post '/payment', to: 'braintree#payment'
     put 'products/:id/hidden', to: 'products#hiddenUpdate'
     put 'products/:id/featured', to: 'products#featuredUpdate'
+
+    get '*other', to: 'static#index'
   end
 end
