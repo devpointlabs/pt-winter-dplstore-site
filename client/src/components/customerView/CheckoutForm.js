@@ -145,9 +145,7 @@ class CheckoutForm extends React.Component {
                 onChange={this.props.handleChange('email')}    
               />    
             </Form.Group>
-
             <Button color='purple' onClick={this.saveAndContinue}>Save And Continue </Button>
-
           </Form>
         </Segment>
       </Container>
