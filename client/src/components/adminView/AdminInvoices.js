@@ -15,13 +15,12 @@ class AdminInvoices extends React.Component {
     return this.state.invoices.map ( i => (
       <Card key={i.id}>
         <Card.Content 
-        as={Link}
-        to={`/admin/invoices/${i.id}`}
+          as={Link}
+          to={`/admin/invoices/${i.id}`}
         >
           <Card.Header>
             Order: {i.order_id}
           </Card.Header>
-
         </Card.Content>
       </Card>
     ))
@@ -39,7 +38,6 @@ class AdminInvoices extends React.Component {
       </div>
     )
   }
-
 }
 
 export default AdminInvoices
