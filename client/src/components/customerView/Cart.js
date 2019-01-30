@@ -7,8 +7,6 @@ import CartList from './CartList'
 import CartTotals from './CartTotals'
 import { Button, Divider, Grid, Header, Input } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom';
-import BrainTreeDrop from '../../components/customerView/BraintreeDrop';
-
 
 class Cart extends Component {
   state = { products: [], cart: [], inCart: false, cartSubTotal: 0, cartTax: 0, cartTotal: 0 }
@@ -37,7 +35,6 @@ class Cart extends Component {
           }}
         </ProductConsumer>
         <br />
-          <BrainTreeDrop />
         <Divider />
       </div>
     )
