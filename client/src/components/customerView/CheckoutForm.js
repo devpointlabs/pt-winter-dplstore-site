@@ -81,7 +81,7 @@ class CheckoutForm extends React.Component {
               <Form.Input 
                 fluid
                 name="address"
-                width={6}
+                width={5}
                 placeholder="Address"
                 label="Address"
                 defaultValue={values.address}
