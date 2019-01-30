@@ -9,7 +9,7 @@ import { List } from 'semantic-ui-react';
    // add this in the parantheses line 8 {id}
   <div>
 
-  <List  style={{filter: 'grayscale(100%)'}} horizontal>
+  <List horizontal>
 
   <List.Item>
   <FacebookShareButton

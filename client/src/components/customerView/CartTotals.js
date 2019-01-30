@@ -1,5 +1,6 @@
 import React from 'react'
-import BraintreeDrop from './BraintreeDrop';
+import { Button } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 export default function CartTotals ({ value, history }){  
     const {cartSubTotal, cartTotal, cartTax, clearCart} = value
@@ -15,7 +16,9 @@ export default function CartTotals ({ value, history }){
             <h5>
               Total: $ {cartTotal}
             </h5>
-            <BraintreeDrop total = {cartTotal} clearCart={clearCart} history={history} />
+            <Link to='/checkout'>
+                <Button color="purple">Purchase</Button>
+            </Link>
           </div>
         </React.Fragment>
     )

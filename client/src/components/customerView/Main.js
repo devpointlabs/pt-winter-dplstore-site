@@ -5,23 +5,16 @@ import PaymentForm from './PaymentForm';
 import Confirmation from './Confirmation';
 import CheckoutBar from './CheckoutBar';
 import PaymentSuccess from './PaymentSuccess';
-import axios from 'axios'
+import axios from 'axios';
+import { ProductConsumer } from '../../providers/ProductProvider';
 
 class Main extends Component {
-    // state = {
-    //     step: 1,
-    //     firstName: "", middleName:"", lastName:"", address:"", 
-    //     city:"", zipcode:'', phone:"", state:"", country:"", email: "",
-    //     amount: 10
-    // }
-
-    state = { order: {}, step: 1, amount: 14 }
+    state = { order: {}, step: 1 }
 
     submitOrder = (order) => {
         axios.post('/api/orders', {order})
           .then(res => {
             this.setState({ order:  {} })
-            // window.location.reload();
           })
       }
    
@@ -71,13 +64,22 @@ class Main extends Component {
                     </div>
         case 3:
             return  <div>
-                    <PaymentForm 
-                    nextStep={this.nextStep}
-                    prevStep={this.prevStep}
-                    handleChange = {this.handleChange}
-                    values={values}
-                    amount={amount}
-                    />
+                        <ProductConsumer>
+                            { v => {
+                                const {cartTotal} = v
+                                return (
+                                    <PaymentForm 
+                                    nextStep={this.nextStep}
+                                    prevStep={this.prevStep}
+                                    handleChange = {this.handleChange}
+                                    values={values}
+                                    amount={cartTotal}
+                                    />
+                                )
+                            }
+                            }
+
+                        </ProductConsumer>
                     </div>
         }
     }
