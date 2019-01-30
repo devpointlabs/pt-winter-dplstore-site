@@ -4,7 +4,7 @@ export default function EmptyCart(){
     return(
         <div>
         <br/>
-        <h1 align='center'>your cart is currently empty</h1>
+        <h2 align='center' style={{color: 'grey' }}>your cart is currently empty</h2>
         </div>
     )
   }

@@ -22,9 +22,9 @@ class Navbar extends Component {
 
   render() {
     return(
-      <Menu>
+      <div>
         { this.navigation() }
-      </Menu>
+      </div>
     )
   }
 }

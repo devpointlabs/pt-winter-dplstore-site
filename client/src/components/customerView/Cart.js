@@ -5,7 +5,7 @@ import EmptyCart from './EmptyCart'
 import { ProductConsumer } from '../../providers/ProductProvider'
 import CartList from './CartList'
 import CartTotals from './CartTotals'
-import { Button, Divider, Grid, Header, Input } from 'semantic-ui-react'
+import { Button, Divider, Grid, Header, Container } from 'semantic-ui-react'
 import { NavLink } from 'react-router-dom';
 
 class Cart extends Component {
@@ -24,8 +24,11 @@ class Cart extends Component {
             if(cart.length>0){
               return(
                 <React.Fragment>
+                  <Container>
                 <CartList value={value}/>
-                <CartTotals  value={value} history={this.props.history} />
+                <br />
+                <CartTotals value={value} history={this.props.history} />
+                </Container>
                 </React.Fragment>
                 )
               } 
@@ -35,7 +38,6 @@ class Cart extends Component {
           }}
         </ProductConsumer>
         <br />
-        <Divider />
       </div>
     )
   }

@@ -72,7 +72,7 @@ class ProductProvider extends Component {
     const index = tempCart.indexOf(selectedProduct)
     const product = tempCart[index]
     product.qty = product.qty + 1
-    product.total = product.count * product.price
+    product.total = product.qty * product.price
     this.setState(() => {
       return {
         cart: [...tempCart]
@@ -131,10 +131,10 @@ class ProductProvider extends Component {
 
   addTotals = () => {
     var subTotal = 0
-    this.state.cart.map(item => (subTotal += item.total ))
+    this.state.cart.map(item => (subTotal = parseFloat(subTotal) + parseFloat(item.total)))
     const tempTax = subTotal * 0.0685
     const tax = parseFloat(tempTax.toFixed(2))
-    const total = subTotal + tax
+    const total = parseFloat(Math.round((subTotal + tax) * 100) / 100).toFixed(2);
     this.setState(() => {
       return {
         cartSubTotal: subTotal,

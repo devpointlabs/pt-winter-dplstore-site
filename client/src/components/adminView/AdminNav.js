@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Logo from '../../images/DPL_Mark.png';
 import { NavLink, withRouter, Link } from 'react-router-dom';
-import { Menu, Icon } from 'semantic-ui-react';
+import { Menu, Icon, Button } from 'semantic-ui-react';
 import { AuthConsumer } from '../../providers/AuthProvider';
 
 class AdminNav extends Component {
@@ -11,10 +11,14 @@ class AdminNav extends Component {
     if (user) {
       return (
         <Menu.Menu position='right'>
-          <Menu.Item
-            name='logout'
-            onClick={ () => handleLogout(this.props.history) }
-          />
+          <Menu.Item>
+            <Button
+              basic
+              name='logout'
+              onClick={ () => handleLogout(this.props.history) }>
+              Logout
+            </Button>
+          </Menu.Item>
         </Menu.Menu>
       )
     } else {
