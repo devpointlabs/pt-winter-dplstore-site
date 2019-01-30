@@ -9,20 +9,12 @@ import axios from 'axios';
 import { ProductConsumer } from '../../providers/ProductProvider';
 
 class Main extends Component {
-    // state = {
-    //     step: 1,
-    //     firstName: "", middleName:"", lastName:"", address:"", 
-    //     city:"", zipcode:'', phone:"", state:"", country:"", email: "",
-    //     amount: 10
-    // }
-
     state = { order: {}, step: 1 }
 
     submitOrder = (order) => {
         axios.post('/api/orders', {order})
           .then(res => {
             this.setState({ order:  {} })
-            // window.location.reload();
           })
       }
    
