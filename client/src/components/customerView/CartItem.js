@@ -6,22 +6,21 @@ export default function CartList({item, value}) {
   const { increment, decrement, removeItem } = value
     return (
       <div>
-      <Grid relaxed columns={4}>
-        <Grid.Row style={{margion: '20px'}}>
+        <br />
+      <Grid relaxed columns={3}>
+        <Grid.Row style={{margin: '20px'}}>
           <Grid.Column position='right'>
             <img 
               src={image}
-              style={{width:"5rem",height:"5rem"}}
+              style={{width:"100px"}}
               alt="product"
             />  
           </Grid.Column>
         <Grid.Column verticalAlign='middle' style={{color: 'lightgrey', fontSize: '12px'}}>
           {name}
         </Grid.Column>
-        <Grid.Column c textAlign='right'>
-          $ {price}
-        </Grid.Column>
-        <Grid.Column>
+        <Grid.Column textAlign='right' verticalAlign='middle'>
+          $ {price}&nbsp;&nbsp;&nbsp;&nbsp;
           <Button onClick={()=>removeItem(id)} basic size='mini'>
             <i className="fas fa-trash">X</i>
           </Button>
