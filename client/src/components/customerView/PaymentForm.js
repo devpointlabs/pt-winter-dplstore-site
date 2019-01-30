@@ -45,7 +45,7 @@ class PaymentForm extends Component{
         <Grid>
         <Form color='blue' >
             <Segment textAlign='center'>
-                <Label color='purple'>Total Order Amount</Label>
+                <Label className="dpl-purple">Total Order Amount</Label>
                     <Input
                     value={amount}
                     style={{ fontSize: '18px' }}
@@ -55,7 +55,7 @@ class PaymentForm extends Component{
                     <BraintreeDrop amount={amount} />
             
             </Segment>
-            <Button color='purple' onClick={this.back}>Back</Button>
+            <Button className="dpl-purple" onClick={this.back}>Back</Button>
         </Form>
         </Grid>
         </Container>

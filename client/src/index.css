@@ -40,3 +40,8 @@ code {
   float: right !important;
   color: black !important;
 }
+
+.dpl-purple {
+  background-color: #8168B1 !important;
+  color: white !important;
+}

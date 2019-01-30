@@ -58,6 +58,7 @@ class Product extends React.Component {
                   onClick = {() => this.props.value.addToCart(id)}
                   icon
                   size="small"
+                  className="dpl-purple"
                 >
                 {inCart ? (<p>in cart</p>) : (<i />) } 
                 <Icon name="add to cart" /> Add to Cart

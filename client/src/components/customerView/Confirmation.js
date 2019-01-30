@@ -79,8 +79,8 @@ class Confirmation extends Component{
                     </List.Item>
                 </List>
 
-                <Button color='purple' onClick={this.back}>Back</Button>
-                <Button color='purple' onClick={this.SaveAndContinue}>Confirm</Button>
+                <Button className="dpl-purple" onClick={this.back}>Back</Button>
+                <Button className="dpl-purple" onClick={this.SaveAndContinue}>Confirm</Button>
                 </Segment>
                 </Container>
             </div>
