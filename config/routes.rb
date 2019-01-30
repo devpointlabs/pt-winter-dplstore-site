@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
+
   namespace :api do
     resources :products
     resources :invoices
@@ -9,4 +10,6 @@ Rails.application.routes.draw do
     put 'products/:id/hidden', to: 'products#hiddenUpdate'
     put 'products/:id/featured', to: 'products#featuredUpdate'
   end
+
+  get '*other', to: 'static#index'
 end

@@ -35,3 +35,8 @@ code {
 .slick-dots {
   top: 295px !important;
 }
+
+.register {
+  float: right !important;
+  color: black !important;
+}

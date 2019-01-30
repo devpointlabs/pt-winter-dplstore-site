@@ -1,5 +1,6 @@
 import React from 'react';
 import { Form, Container, Segment, Step, Icon, Button} from 'semantic-ui-react';
+import styled from 'styled-components';
 
 class CheckoutForm extends React.Component {
 
@@ -11,7 +12,7 @@ class CheckoutForm extends React.Component {
   render() {
     const { values } = this.props;
 
-    return (
+  return (
   <div>
       <Segment>
           <Step.Group ordered widths="equal">
@@ -19,8 +20,8 @@ class CheckoutForm extends React.Component {
               <Step.Content>
                 <Step.Title>Order details</Step.Title>
                 <Step.Description>Enter your personal details</Step.Description>
-               </Step.Content>
-             </Step>
+              </Step.Content>
+            </Step>
 
              <Step disabled>
               <Step.Content>
@@ -36,7 +37,7 @@ class CheckoutForm extends React.Component {
                 </Step.Content>
               </Step>
           </Step.Group>
-        </Segment>
+      </Segment>
 
       <Container>     
         <Segment>
@@ -57,7 +58,7 @@ class CheckoutForm extends React.Component {
               <Form.Input 
                 fluid
                 name="middleName"
-                width={3}
+                width={4}
                 placeholder="Middle Name (optional)"
                 label="Middle Name"
                 defaultValue={values.middleName}
@@ -74,14 +75,13 @@ class CheckoutForm extends React.Component {
                 required
                 onChange={this.props.handleChange('lastName')}
               />
-
             </Form.Group>
 
             <Form.Group>
               <Form.Input 
                 fluid
                 name="address"
-                width={6}
+                width={5}
                 placeholder="Address"
                 label="Address"
                 defaultValue={values.address}
@@ -91,7 +91,7 @@ class CheckoutForm extends React.Component {
               <Form.Input 
                 fluid
                 name="city"
-                width={3}
+                width={4}
                 placeholder="City"
                 label="City"
                 defaultValue={values.city}
@@ -102,7 +102,7 @@ class CheckoutForm extends React.Component {
               <Form.Input 
                 fluid
                 name="zipcode"
-                width={2}
+                width={3}
                 placeholder="Zipcode"
                 label="Zipcode"
                 defaultValue={values.zipcode}
@@ -116,7 +116,7 @@ class CheckoutForm extends React.Component {
             <Form.Group>
             <Form.Input 
                 fluid
-                width={2}
+                width={3}
                 name="state"
                 placeholder="State"
                 label="State"
@@ -127,18 +127,17 @@ class CheckoutForm extends React.Component {
              <Form.Input 
                 fluid
                 name="phone"
-                width={3}
+                width={4}
                 placeholder="(xxx)-xxx-xxxx"
                 label="Phone"
                 defaultValue={values.phone}
                 required
                 onChange={this.props.handleChange('phone')}    
               /> 
-
             <Form.Input 
                 fluid
                 name="email"
-                width={4}
+                width={5}
                 placeholder="your@email.com"
                 label="Email"
                 defaultValue={values.email}
@@ -146,9 +145,7 @@ class CheckoutForm extends React.Component {
                 onChange={this.props.handleChange('email')}    
               />    
             </Form.Group>
-
-            <Button color='purple' onClick={this.saveAndContinue}>Save And Continue </Button>
-
+            <Button color="purple" onClick={this.saveAndContinue}>Save And Continue</Button>
           </Form>
         </Segment>
       </Container>

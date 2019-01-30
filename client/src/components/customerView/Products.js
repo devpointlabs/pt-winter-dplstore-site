@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Card, Header, Divider, Container, Image } from 'semantic-ui-react'
 import SimpleSlider from './SimpleSlider'
 
-class Products extends React.Component {
+class Products extends Component {
   state = { products: [], }
 
   componentDidMount() {
@@ -16,8 +16,7 @@ class Products extends React.Component {
 
   renderProducts = () => {
     const { products } = this.state
-
-    return products.map(p => {
+    return products.map( p => {
       if (p.hidden === false ) {
         return (
           <Link key={p.id} to={`/products/${p.id}`} >

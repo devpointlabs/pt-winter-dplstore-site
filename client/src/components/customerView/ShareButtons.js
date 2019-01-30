@@ -9,15 +9,15 @@ import { List } from 'semantic-ui-react';
    // add this in the parantheses line 8 {id}
   <div>
 
-  <List  style={{filter: 'grayscale(100%)'}} horizontal>
+  <List horizontal>
 
   <List.Item>
   <FacebookShareButton
   // TODO !!!
   // change all url for the buttons to reflect the choice of product 
   // url=`dplstore.com/products/${id}`
-   url="wwww.facebook.com"
-   quote="Check out this product"
+   url="http://www.devpointlabs.com/"
+   quote="Check out the products from this site!"
    className="facebookButton">
    <FacebookIcon
     size={40}
@@ -28,8 +28,8 @@ import { List } from 'semantic-ui-react';
   
   <List.Item>
   <TwitterShareButton
-  url="www.twitter.com"
-  quote="twitter"
+  url="http://www.devpointlabs.com/"
+  quote="Check out the products from this site!"
   className="twitterButton">
   <TwitterIcon
     size={40}
@@ -39,8 +39,8 @@ import { List } from 'semantic-ui-react';
   </List.Item>
   <List.Item>
   <GooglePlusShareButton
-  url="www.google.com"
-  quote="google"
+  url="http://www.devpointlabs.com/"
+  quote="Check out the products from this site!"
   className="googleButton">
   <GooglePlusIcon
     size={40}
@@ -51,8 +51,8 @@ import { List } from 'semantic-ui-react';
 
   <List.Item>
   <LinkedinShareButton
-  url="www.linkedin.com"
-  quote="linkedIn"
+  url="http://www.devpointlabs.com/"
+  quote="Check out the products from this site!"
   className="linkedinButton">
   <LinkedinIcon
     size={40}
@@ -63,8 +63,8 @@ import { List } from 'semantic-ui-react';
 
   <List.Item>
   <WhatsappShareButton
-  url="www.whatsapp.com"
-  quote="whatsapp"
+  url="http://www.devpointlabs.com/"
+  quote="Check out the products from this site!"
   className="whatsappButton">
   <WhatsappIcon
     size={40}
@@ -74,8 +74,8 @@ import { List } from 'semantic-ui-react';
   </List.Item>
  <List.Item>
  <EmailShareButton
- url="www.devpointlabs.com"
- subject="Check out this product!"
+ url="http://www.devpointlabs.com/"
+ quote="Check out the products from this site!"
  body={"Hey, check out this cool product I got!" + <a href="www.devpointlabs.com">Link</a>}
  className="emailButton">
     <EmailIcon

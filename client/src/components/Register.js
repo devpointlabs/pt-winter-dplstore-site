@@ -34,7 +34,7 @@ class Register extends React.Component {
           autoFocus
           name='email'
           value={email}
-          placeholder='Eamil'
+          placeholder='Email'
           onChange={this.handleChange}
         />
         <Form.Input

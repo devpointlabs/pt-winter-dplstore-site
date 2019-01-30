@@ -17,6 +17,7 @@ import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import AdminInvoices from './components/adminView/AdminInvoices'
 import AdminInvoice from './components/adminView/AdminInvoice'
+import Admin from './components/adminView/Admin'
 
 const App = () => (
   <Fragment>
@@ -30,7 +31,7 @@ const App = () => (
           <ProtectedRoute exact path='/admin' component={AdminProducts} />
           <Route exact path='/products/:id' component={Product} />
           <Route exact path='/customer/products' component={Products} />
-          <Route exact path='/cart/' component={Cart} />
+          <Route exact path='/cart' component={Cart} />
           <Route exact path='/checkout' component={Main} />
           <Route exact path='/payment_success' component={PaymentSuccess} />
           <Route exact path="/login" component={Login} />

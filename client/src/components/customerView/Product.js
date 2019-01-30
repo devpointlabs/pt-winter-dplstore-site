@@ -1,20 +1,19 @@
 import React from 'react';
 import axios from 'axios';
-import {Header, Grid, Button, Icon, Container, Image, Divider } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
+import { Segment, Header, Item, Grid, Button, Icon, Divider, Container } from 'semantic-ui-react';
 import ShareButtons from './ShareButtons'; 
+import { ProductConsumer } from '../../providers/ProductProvider';
+import PropTypes from 'prop-types'
 
 class Product extends React.Component {
-  state = { product: {}, cartItems: [], edit: false }
+  state = { product: {}, cart: [], inCart: false, edit: false }
 
   componentDidMount() {
     axios.get(`/api/products/${this.props.match.params.id}`)
       .then(res => {
         this.setState({ product: res.data })
       })
-  }
-
-  handleAdd = () => {
-    this.props.handleAdd(this.props.product.id)
   }
 
   showProduct = () => {
@@ -93,4 +92,22 @@ class Product extends React.Component {
   }
 }
 
-export default Product;
+Product.propTypes = {
+  product:PropTypes.shape({
+      id:PropTypes.number,
+      img:PropTypes.string,
+      title:PropTypes.string,
+      price:PropTypes.number,
+      inCart:PropTypes.bool
+  }).isRequired
+}
+
+const ConnectedProduct = (props) => (
+  <ProductConsumer>
+    { value => 
+      <Product { ...props } value={value} />
+    }
+  </ProductConsumer>
+)
+
+export default ConnectedProduct;

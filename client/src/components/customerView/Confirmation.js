@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, List, Segment, Step, Icon } from 'semantic-ui-react';
+import { Button, List, Segment, Step, Icon, Container } from 'semantic-ui-react';
 
 class Confirmation extends Component{
     
@@ -46,7 +46,9 @@ class Confirmation extends Component{
                 </Step>
             </Step.Group>
           </Segment>
-     
+
+     <Container>
+         <Segment> 
                 <h1 className="ui centered">Confirm your Details</h1>
                 <p>Click Confirm if the following details have been correctly entered</p>
                 <List  onSubmit={this.handleSubmit}>
@@ -73,13 +75,14 @@ class Confirmation extends Component{
                     <List.Item>
                         <List.Icon name='map marker alternate' />
                         <List.Content>{address}</List.Content>
-                        <List.Content>{city}</List.Content>
                         <List.Content>{city},{zipcode},{state}</List.Content>
                     </List.Item>
                 </List>
 
                 <Button color='purple' onClick={this.back}>Back</Button>
                 <Button color='purple' onClick={this.SaveAndContinue}>Confirm</Button>
+                </Segment>
+                </Container>
             </div>
         )
     }

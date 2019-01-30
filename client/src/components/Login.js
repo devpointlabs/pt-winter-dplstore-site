@@ -1,9 +1,36 @@
 import React from 'react';
 import { AuthConsumer, } from "../providers/AuthProvider";
-import { Button, Form, Segment, Header, } from 'semantic-ui-react';
+import { Link } from 'react-router-dom'
+import { Button, Form, Segment, Header, Menu } from 'semantic-ui-react';
 
 class Login extends React.Component {
   state = { email: '', password: '' }
+
+  rightNavItems = () => {
+    const { auth: { user, handleLogout, }, location, } = this.props;
+    if (user) {
+      return (
+        <Menu.Menu position='right'>
+          <Menu.Item
+            name='logout'
+            onClick={ () => handleLogout(this.props.history) }
+          />
+        </Menu.Menu>
+      )
+    } else {
+      return (
+        <Button className='register'>
+          <Link to='/register'>
+            <Menu.Item
+              id='register'
+              name='register'
+              active={location.pathname === '/register'}
+            />
+          </Link>
+        </Button>
+      )
+    }
+  }
   
   handleSubmit = (e) => {
     e.preventDefault();
@@ -20,7 +47,11 @@ class Login extends React.Component {
     const { email, password, } = this.state;
   
     return (
+      
       <Segment basic>
+        <div>
+          { this.rightNavItems() }
+        </div>
         <Header as='h1' textAlign='center'>Login</Header>
         <Form onSubmit={this.handleSubmit}>
           <Form.Input
@@ -42,7 +73,7 @@ class Login extends React.Component {
             onChange={this.handleChange}
           />
           <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+            <Button type='submit'>Submit</Button>
           </Segment>
         </Form>
       </Segment>

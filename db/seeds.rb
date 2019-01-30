@@ -20,12 +20,12 @@ end
     zipcode: Faker::Address.zip,
     state: Faker::Address.state,
     phone: Faker::PhoneNumber.phone_number,
-    email: Faker::Internet.email,
+    email: Faker::Internet.email
   )
     Invoice.create(
       product_id: rand(1..20),
       order_id: order.id,
-      transactionId: Faker::Number.number(8),
+      transactionId: Faker::Number.number(8)
     )
 end
 
