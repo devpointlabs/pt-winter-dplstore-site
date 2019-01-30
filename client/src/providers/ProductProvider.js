@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 const ProductContext = React.createContext();
 
@@ -48,7 +49,7 @@ class ProductProvider extends Component {
     this.setState(() => {
       return {products: tempProducts, cart: [...this.state.cart, product]}
     },() => {
-      this.addTotals()
+      this.addTotals();
     })
   }
 

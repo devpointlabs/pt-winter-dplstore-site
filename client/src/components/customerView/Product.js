@@ -84,7 +84,7 @@ class Product extends React.Component {
                     {/* TODO !!!! */}
                     {ShareButtons()}
                     {/* {ShareButtons(id)} */}  
-                         {/* replace sharebuttons() with sharebuttons(id) */}
+                    {/* replace sharebuttons() with sharebuttons(id) */}
 
                     </Item.Extra>
                     </Item.Content>
