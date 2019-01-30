@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Form, Container, Segment, Step, Icon, Button} from 'semantic-ui-react';
+import { Segment, Step, Icon,} from 'semantic-ui-react';
 
 class CheckoutBar extends Component{
 

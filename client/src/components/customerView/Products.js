@@ -1,8 +1,8 @@
 import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
-import { Card, Header, Divider, Container } from 'semantic-ui-react'
-import ProductPreview from './ProductPreview'
+import { Card, Header, Divider, Container, Image } from 'semantic-ui-react'
+// import ProductPreview from './ProductPreview'
 import SimpleSlider from './SimpleSlider'
 
 class Products extends React.Component {
@@ -21,8 +21,11 @@ class Products extends React.Component {
     return products.map(p => {
       if (p.hidden === false ) {
         return (
-          <Link to={`/products/${p.id}`}>
-            <ProductPreview key={p.id} {...p} remove={this.removeProduct} />
+          <Link key={p.id} to={`/products/${p.id}`} >
+            <div className='cardPreview' style={{ height: '500px', border: '1px solid lightgrey', padding: '30px' }} >
+              <Header textAlign='right' style={{color: 'grey'}} >{p.name} <br /> ${p.price}</Header>
+              <Image src={p.image} style={{width: '300px'}}/>
+            </div>
           </Link>
         )
       }
@@ -39,10 +42,12 @@ class Products extends React.Component {
         <br />
         <br />
         <Header textAlign='center'>FEATURED PRODUCTS</Header>
-          <Divider />
-            <Card.Group nameClass='cards' itemsPerRow={3}>
-              { this.renderProducts()}
-            </Card.Group>
+        <Divider />
+        <div >
+          <Card.Group centered>
+            {this.renderProducts()}  
+          </Card.Group>
+        </div>
       </div>
     )
   }

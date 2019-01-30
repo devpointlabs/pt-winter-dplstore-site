@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { throws } from 'assert';
-import { Header, Step, Icon, Segment, Input, Label, Divider, Form, Button, Container, Grid } from 'semantic-ui-react';
+import { Step, Icon, Segment, Input, Label, Divider, Form, Button, Container, Grid } from 'semantic-ui-react';
 import BraintreeDrop from './BraintreeDrop';
 
 class PaymentForm extends Component{

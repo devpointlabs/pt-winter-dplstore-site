@@ -118,24 +118,12 @@ class CheckoutForm extends React.Component {
                 fluid
                 width={2}
                 name="state"
-                width={2}
                 placeholder="State"
                 label="State"
                 defaultValue={values.state}
                 required
                 onChange={this.props.handleChange('state')}   
               />  
-            <Form.Input 
-                fluid
-                width={3}
-                name="Country"
-                width={2}
-                placeholder="Country"
-                label="Country"
-                defaultValue={values.country}
-                required
-                onChange={this.props.handleChange('country')} 
-              /> 
              <Form.Input 
                 fluid
                 name="phone"
@@ -144,7 +132,6 @@ class CheckoutForm extends React.Component {
                 label="Phone"
                 defaultValue={values.phone}
                 required
-                onChange={this.handleChange} 
                 onChange={this.props.handleChange('phone')}    
               /> 
 
@@ -156,7 +143,6 @@ class CheckoutForm extends React.Component {
                 label="Email"
                 defaultValue={values.email}
                 required
-                onChange={this.handleChange} 
                 onChange={this.props.handleChange('email')}    
               />    
             </Form.Group>
