@@ -32,7 +32,7 @@ const App = () => (
           <ProtectedRoute exact path='/admin' component={Admin} />
           <Route exact path='/products/:id' component={Product} />
           <Route exact path='/customer/products' component={Products} />
-          <Route exact path='/cart/' component={Cart} />
+          <Route exact path='/cart' component={Cart} />
           <Route exact path='/checkout' component={Main} />
           <Route exact path='/payment_success' component={PaymentSuccess} />
           <Route exact path="/login" component={Login} />

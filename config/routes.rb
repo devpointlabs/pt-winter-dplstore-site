@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
+
   namespace :api do
     resources :products
     resources :invoices
@@ -11,4 +12,17 @@ Rails.application.routes.draw do
 
     get '*other', to: 'static#index'
   end
+
+  # namespace :api do
+  #   resources :products do
+  #     resources :invoices
+  #   end
+  #   resources :orders do
+  #     resources :invoices
+  #   end
+  #   post '/cart_items', to: 'products#cart_items'
+  # end
+
+
+  # get '*other', to: 'static#index'
 end
