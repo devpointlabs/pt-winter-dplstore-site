@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import Logo from '../../images/DPL_Mark.png';
 import { NavLink } from 'react-router-dom';
 import { Menu, Icon, Container } from 'semantic-ui-react';
-import CartTotals from './CartTotals'
-import { ProductConsumer } from '../../providers/ProductProvider'
 
 class CustomerNav extends Component {
   state = { products: [], cart: [], cartSubTotal: 0, }
