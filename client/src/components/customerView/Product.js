@@ -16,28 +16,6 @@ class Product extends React.Component {
       })
   }
 
-  // handleClick = () => {
-  //   const {id, inCart} = this.props.product
-  //   return (
-  //     <ProductConsumer>
-  //     {(value)=>(
-  //          <div 
-  //          onClick={()=>value.handleDetail(id)}>
-  //          <Button 
-  //           disabled={inCart?true:false}
-  //           onClick={()=>{value.addToCart(id)}}
-  //           icon
-  //           color="purple"
-  //           size="small"
-  //           >
-  //             <Icon name="add to cart" />
-  //          </Button>
-  //      </div>
-  //     )}
-  //     </ProductConsumer>
-  //   )
-  // }
-
   showProduct = () => {
     const { product: { name, price, description, stock, image, id }, inCart } = this.state
     return (
@@ -65,7 +43,6 @@ class Product extends React.Component {
                 {inCart ? (<p>in cart</p>) : (<i />) }
                 <Icon name="add to cart" />
               </Button>
-
             </Item>
           </Grid.Column>
           <Grid.Column>
