@@ -54,7 +54,6 @@ class Main extends Component {
         switch(step) {
         case 1:
             return <div>
-                    {/* <CheckoutBar/> */}
                     <CheckoutForm 
                     nextStep={this.nextStep} 
                     handleChange = {this.handleChange}
@@ -63,7 +62,6 @@ class Main extends Component {
                     </div>
         case 2:
             return  <div>
-                    {/* <CheckoutBar/>  */}
                     <Confirmation 
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
@@ -73,7 +71,6 @@ class Main extends Component {
                     </div>
         case 3:
             return  <div>
-                    {/* <CheckoutBar/> */}
                     <PaymentForm 
                     nextStep={this.nextStep}
                     prevStep={this.prevStep}
@@ -82,8 +79,6 @@ class Main extends Component {
                     amount={amount}
                     />
                     </div>
-        // case 4:
-            // return <PaymentSuccess />
         }
     }
 }
