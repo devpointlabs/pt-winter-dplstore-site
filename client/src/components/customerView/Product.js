@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-import { Segment, Header, Item, Grid, Button, Icon, Divider, Container } from 'semantic-ui-react';
+import { Segment, Header, Item, Grid, Button, Icon, Divider, Container, Image } from 'semantic-ui-react';
 import ShareButtons from './ShareButtons'; 
 import { ProductConsumer } from '../../providers/ProductProvider';
 import PropTypes from 'prop-types'
