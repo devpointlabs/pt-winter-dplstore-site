@@ -2,7 +2,6 @@ import React from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { Card, Header, Divider, Container, Image } from 'semantic-ui-react'
-// import ProductPreview from './ProductPreview'
 import SimpleSlider from './SimpleSlider'
 
 class Products extends React.Component {
