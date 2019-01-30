@@ -75,7 +75,6 @@ class CheckoutForm extends React.Component {
                 required
                 onChange={this.props.handleChange('lastName')}
               />
-
             </Form.Group>
 
             <Form.Group>
@@ -103,7 +102,7 @@ class CheckoutForm extends React.Component {
               <Form.Input 
                 fluid
                 name="zipcode"
-                width={2}
+                width={3}
                 placeholder="Zipcode"
                 label="Zipcode"
                 defaultValue={values.zipcode}
@@ -146,7 +145,7 @@ class CheckoutForm extends React.Component {
                 onChange={this.props.handleChange('email')}    
               />    
             </Form.Group>
-            <Button color="purple" onClick={this.saveAndContinue}>Save And Continue </Button>
+            <Button color="purple" onClick={this.saveAndContinue}>Save And Continue</Button>
           </Form>
         </Segment>
       </Container>
