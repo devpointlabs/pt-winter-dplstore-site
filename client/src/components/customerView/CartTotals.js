@@ -17,7 +17,7 @@ export default function CartTotals ({ value, history }){
               Total: $ {cartTotal}
             </h5>
             <Link to='/checkout'>
-            <Button color="purple">Purchase</Button>
+                <Button color="purple">Purchase</Button>
             </Link>
           </div>
         </React.Fragment>
