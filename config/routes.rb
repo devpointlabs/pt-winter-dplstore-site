@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   mount_devise_token_auth_for 'User', at: 'api/auth'
+
   namespace :api do
     resources :products
     resources :invoices
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
     post '/payment', to: 'braintree#payment'
     put 'products/:id/hidden', to: 'products#hiddenUpdate'
     put 'products/:id/featured', to: 'products#featuredUpdate'
-
-    get '*other', to: 'static#index'
   end
+
+  get '*other', to: 'static#index'
 end

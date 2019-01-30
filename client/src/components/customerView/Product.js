@@ -1,10 +1,13 @@
 import React from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom'
 import { Segment, Header, Item, Grid, Button, Icon } from 'semantic-ui-react';
 import ShareButtons from './ShareButtons'; 
+import { ProductConsumer } from '../../providers/ProductProvider';
+import PropTypes from 'prop-types'
 
 class Product extends React.Component {
-  state = { product: {}, cartItems: [], edit: false }
+  state = { product: {}, cart: [], inCart: false, edit: false }
 
   componentDidMount() {
     axios.get(`/api/products/${this.props.match.params.id}`)
@@ -13,12 +16,8 @@ class Product extends React.Component {
       })
   }
 
-  handleAdd = () => {
-    this.props.handleAdd(this.props.product.id)
-  }
-
   showProduct = () => {
-    const { product: { name, price, description, stock, image, id } } = this.state
+    const { product: { name, price, description, stock, image, id }, inCart } = this.state
     return (
       <div style={{padding:'5px}'}}>
         <Grid divided stackable columns={2}>
@@ -33,14 +32,17 @@ class Product extends React.Component {
               </Item.Meta>
               <br/>
               <br/>
-              <Button
-                icon
-                color="purple"
-                size="small">
-                {/* TODO !!! */}
-                onClick = {this.addToCart}
+              {this.handleClick}
+                <Button
+                  disable={inCart ? true : false }
+                  onClick = {() => this.props.value.addToCart(id)}
+                  icon
+                  color="purple"
+                  size="small"
+                >
+                {inCart ? (<p>in cart</p>) : (<i />) }
                 <Icon name="add to cart" />
-              </Button> Instock: {stock}
+              </Button>
             </Item>
           </Grid.Column>
           <Grid.Column>
@@ -105,4 +107,22 @@ class Product extends React.Component {
   }
 }
 
-export default Product;
+Product.propTypes = {
+  product:PropTypes.shape({
+      id:PropTypes.number,
+      img:PropTypes.string,
+      title:PropTypes.string,
+      price:PropTypes.number,
+      inCart:PropTypes.bool
+  }).isRequired
+}
+
+const ConnectedProduct = (props) => (
+  <ProductConsumer>
+    { value => 
+      <Product { ...props } value={value} />
+    }
+  </ProductConsumer>
+)
+
+export default ConnectedProduct;
