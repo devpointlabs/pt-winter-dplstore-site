@@ -5,13 +5,11 @@ import { Menu, Icon, Container } from 'semantic-ui-react';
 import CartTotals from './CartTotals'
 import { ProductConsumer } from '../../providers/ProductProvider'
 
-
 class CustomerNav extends Component {
   state = { products: [], cart: [], cartSubTotal: 0, }
 
   render() {
     return (
-// const CustomerNav = () => (
   <Container>
       <Menu text style={{margin: '70px'}}>
         <Menu.Menu>
@@ -30,6 +28,5 @@ class CustomerNav extends Component {
       </Container>
     )
     }}
-
 
 export default CustomerNav;
