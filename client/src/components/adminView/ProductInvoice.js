@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Item, Segment,  } from 'semantic-ui-react';
+import { Item, Segment,  } from 'semantic-ui-react';
 
 const ProductInvoice = ({ name, price, image }) => (
   <Segment>

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
 import axios from 'axios'
-import { Card } from "semantic-ui-react";
-import { Link } from 'react-router-dom'
 
 class SimpleSlider extends Component {
   state = { products: [] }
@@ -21,7 +19,7 @@ class SimpleSlider extends Component {
       if (p.featured === true) {
         return (
           // grab the image and have it link
-          <div>
+          <div key={p.id}>
              <img src={p.image} alt={p.name} />
           </div>
        )

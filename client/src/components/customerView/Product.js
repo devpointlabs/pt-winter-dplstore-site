@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-import { Segment, Header, Item, Grid, Button, Icon } from 'semantic-ui-react';
+import { Segment, Header, Item, Grid, Button, Icon, Divider, Container } from 'semantic-ui-react';
 import ShareButtons from './ShareButtons'; 
 import { ProductConsumer } from '../../providers/ProductProvider';
 import PropTypes from 'prop-types'
@@ -17,81 +17,66 @@ class Product extends React.Component {
   }
 
   showProduct = () => {
-    const { product: { name, price, description, stock, image, id }, inCart } = this.state
+    const { product: { name, price, description, stock, image, id, }, inCart } = this.state
     return (
-      <div style={{padding:'5px}'}}>
-        <Grid divided stackable columns={2}>
+      <div >
+        <Grid celled='internally' stackable columns={2}>
           <Grid.Column>
-            <Item>
-              <Item.Image src={image} />
+            <Grid.Row>
+              <Image centered src={image} />
+            </Grid.Row>
+            <Grid.Row >
+              <Header textAlign='center' as='h4' color="grey">{name} <br /> ${price}</Header>
+            </Grid.Row>
+          </Grid.Column>
+          <Grid.Column style={{padding: '20px'}}>
+              <Grid.Row>
+                <Header 
+                  as='h2' 
+                  color="grey" 
+                  textAlign='center' 
+                >
+                  Limited Edition
+                </Header>
+              </Grid.Row>
               <br/>
               <br/>
-              <Header as='h4' color="grey">{name}</Header>
-              <Item.Meta>
-              <span className='price'>${price}</span>
-              </Item.Meta>
               <br/>
-              <br/>
-              {this.handleClick}
+              <Grid.Row> 
+                <Header color="grey" as='h4' >
+                  {name}
+                  <br />
+                  - {description}
+                  <br /><br /><br /><br /><br /><br /><br />
+                </Header>
+                Stock: {stock}
+              </Grid.Row>
+              <br />
+              <Grid.Row> 
                 <Button
                   disable={inCart ? true : false }
                   onClick = {() => this.props.value.addToCart(id)}
                   icon
-                  color="purple"
                   size="small"
                 >
-                {inCart ? (<p>in cart</p>) : (<i />) }
-                <Icon name="add to cart" />
-              </Button>
-            </Item>
-          </Grid.Column>
-          <Grid.Column>
-            <Grid celled="internally">
+                {inCart ? (<p>in cart</p>) : (<i />) } 
+                <Icon name="add to cart" /> Add to Cart
+              </Button> 
+              </Grid.Row>
+              <Divider />
               <Grid.Row>
-                <Item.Content>
-                  <Item.Extra>
-                    <Header 
-                      as='h3' 
-                      color="grey" 
-                      textAlign='center' 
-                    >
-                      Limited Edition
-                    </Header>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <Item.Description>
-                      {description}
-                    </Item.Description>
-                    <br/>
-                    <br/>
-                  </Item.Extra>
-                </Item.Content>
-              </Grid.Row>   
-              <Grid.Row>
-                <Item.Content>
-                  <Item.Extra>
-                    <br/>
-                    <br/>
-                    <Header 
-                      as='h3' 
-                      color="grey" 
-                      textAlign="left"
-                    >
-                      SHARE
-                    </Header>
-                    <br/>
-                    {/* TODO !!!! */}
-                    {ShareButtons()}
-                    {/* {ShareButtons(id)} */}  
-                    {/* replace sharebuttons() with sharebuttons(id) */}
-
-                    </Item.Extra>
-                    </Item.Content>
-                  </Grid.Row>
-                </Grid>
+                <Header 
+                  as='h2' 
+                  color="grey" 
+                  textAlign="centered"
+                >
+                  S H A R E
+                </Header>
+                  {ShareButtons()}
+              </Grid.Row>
               </Grid.Column>      
             </Grid>
+            <br /><br /><br /><br /><br />
       </div>
     )
   }
@@ -99,9 +84,9 @@ class Product extends React.Component {
   render() {
     return (
         <div>
-        <Segment style={{margin: '15px'}}>
+        <Container>
             {this.showProduct()}
-        </Segment>
+        </Container>
         </div>
     )
   }

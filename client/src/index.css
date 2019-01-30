@@ -14,7 +14,7 @@ code {
 }
 
 .cardPreview {
-  margin: 45px !important;
+  margin: 30px !important;
 }
 
 .cards {
@@ -26,8 +26,7 @@ code {
 }
 
 .sliderImages img {
-  height: 300px !important;
-  width: 250px !important;
+  height: 300px;
   display: block !important;
   margin-left: auto !important;
   margin-right: auto !important;

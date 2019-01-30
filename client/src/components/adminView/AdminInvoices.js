@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { Link, } from 'react-router-dom';
-import { Card, Button, Header, Container, Divider, CardContent } from 'semantic-ui-react';
+import { Card, Header, Divider, } from 'semantic-ui-react';
 
 class AdminInvoices extends React.Component {
   state = { invoices: [], }
@@ -19,8 +19,9 @@ class AdminInvoices extends React.Component {
           to={`/admin/invoices/${i.id}`}
         >
           <Card.Header>
-            Order: {i.order_id}
+            Order #{i.order_id}
           </Card.Header>
+          <Card.Description>Transaction ID: {i.transactionId}</Card.Description>
         </Card.Content>
       </Card>
     ))

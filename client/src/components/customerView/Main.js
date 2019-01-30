@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Form, Container, Segment, Step, Icon} from 'semantic-ui-react';
+// import { Form, Container, Segment, Step, Icon} from 'semantic-ui-react';
 import CheckoutForm from './CheckoutForm';
 import PaymentForm from './PaymentForm';
 import Confirmation from './Confirmation';
@@ -42,7 +42,7 @@ class Main extends Component {
         const { firstName, middleName, lastName, address, city, zipcode, 
                 phone, state, country, email } = this.state;
         const values = { firstName, middleName, lastName, address, city, zipcode, 
-          country, phone, state, country, email, amount};
+          country, phone, state, email, amount};
 
         switch(step) {
         case 1:

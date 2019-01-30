@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, Image} from 'semantic-ui-react'
+import {Card, Image, Container, Header, Grid} from 'semantic-ui-react'
 
 const ProductPreview = ({ name, price, description, image }) => (
   <Card className='cardPreview'>

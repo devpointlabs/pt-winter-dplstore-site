@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Header, Segment, Container,  Divider, Button, Grid, Icon, Card, } from 'semantic-ui-react';
+import { Header, Container, } from 'semantic-ui-react';
 import ProductInvoice from './ProductInvoice';
 import OrderInvoice from './OrderInvoice';
 
@@ -26,16 +26,17 @@ class AdminInvoice extends React.Component {
   
   renderOrder = (order_id) => {
     const order = this.state.orders.find( o => o.id === order_id);
-    debugger
+    
     return order && <OrderInvoice key={order.id} {...order} />
   }
 
   render () {
-    const { product_id, order_id } = this.state.invoice;
+    const { product_id, order_id, transactionId } = this.state.invoice;
     if (product_id) {
       return(
         <div>
-          <Header>Order #{order_id}</Header>
+          <Header as='h1'>Order #{order_id}</Header>
+          <h3>Transaction ID: {transactionId}</h3>
           <Container>
             {this.renderOrder(order_id)}
             {this.renderProduct(product_id)}
