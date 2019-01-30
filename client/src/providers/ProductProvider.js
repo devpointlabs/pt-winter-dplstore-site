@@ -11,7 +11,6 @@ class ProductProvider extends Component {
       .then(res => {
         this.setState({ products: res.data })
       });
-    // this.setProducts()
   }
   
   setProducts = (products) => {
