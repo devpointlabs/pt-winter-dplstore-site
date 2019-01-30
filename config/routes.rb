@@ -9,20 +9,7 @@ Rails.application.routes.draw do
     post '/payment', to: 'braintree#payment'
     put 'products/:id/hidden', to: 'products#hiddenUpdate'
     put 'products/:id/featured', to: 'products#featuredUpdate'
-
-    get '*other', to: 'static#index'
   end
 
-  # namespace :api do
-  #   resources :products do
-  #     resources :invoices
-  #   end
-  #   resources :orders do
-  #     resources :invoices
-  #   end
-  #   post '/cart_items', to: 'products#cart_items'
-  # end
-
-
-  # get '*other', to: 'static#index'
+  get '*other', to: 'static#index'
 end
